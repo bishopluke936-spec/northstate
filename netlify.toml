@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────
+# netlify.toml — North State Senior Solutions
+# Security headers applied to every page on the site.
+# Upload this file to Netlify alongside your HTML files.
+# ─────────────────────────────────────────────────────
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+
+    # Forces HTTPS — prevents browsers from loading the site over HTTP
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # Prevents your site from being embedded in iframes on other sites (clickjacking protection)
+    X-Frame-Options = "DENY"
+
+    # Stops browsers from guessing file types — prevents MIME-sniffing attacks
+    X-Content-Type-Options = "nosniff"
+
+    # Controls what information is sent when a visitor clicks a link leaving your site
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Restricts which browser features the site can access
+    # Disables camera, microphone, geolocation — none of which this site needs
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+

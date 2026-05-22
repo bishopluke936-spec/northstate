@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Care Type Guide | North State Senior Solutions</title>
+<meta name="description" content="Understand the difference between independent living, assisted living, memory care, and continuing care — and find the right fit for your family.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1E3D2F;--green-mid:#2D5443;--green-pale:#E4EDE7;--terra:#B8972A;--terra-light:#CDB054;--cream:#F8F5F0;--cream-dark:#EDE8DF;--charcoal:#1A1A1A;--gray:#6B6460;--gray-light:#A8A49E;--white:#FFFFFF;--border:rgba(26,26,26,0.10);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--r:6px;--r-lg:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:200;background:rgba(248,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.logo-mark img{width:40px;height:40px;object-fit:contain;}
+.logo-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--green);letter-spacing:.04em;line-height:1.15;}
+.logo-sub{display:block;font-size:.6rem;font-weight:400;color:var(--terra);letter-spacing:.18em;text-transform:uppercase;}
+.btn{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:100px;font-family:var(--sans);font-size:.8125rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all .2s;border:1.5px solid transparent;}
+.btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
+.btn-outline:hover{background:var(--green-pale);}
+.btn-terra{background:var(--terra);color:#fff;border-color:var(--terra);}
+.btn-terra:hover{background:var(--terra-light);}
+.page-hero{background:var(--green);padding:5rem 2rem 4rem;}
+.page-hero-in{max-width:820px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .875rem;background:rgba(255,255,255,.12);border-radius:100px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:1.25rem;letter-spacing:.06em;}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:300;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:1rem;}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:560px;line-height:1.7;font-weight:300;}
+.page-body{max-width:820px;margin:0 auto;padding:4rem 2rem 6rem;}
+h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin:3rem 0 .875rem;}
+h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin:1.5rem 0 .5rem;}
+p{color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem;font-size:.975rem;}
+ul,ol{color:var(--gray);line-height:1.8;font-weight:300;margin:0 0 1.25rem 1.5rem;font-size:.975rem;}
+li{margin-bottom:.4rem;}
+strong{color:var(--charcoal);font-weight:500;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.divider{height:1px;background:var(--border);margin:2.5rem 0;}
+.care-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;margin-bottom:1.5rem;border-left:4px solid var(--green);}
+.care-card.terra{border-left-color:var(--terra);}
+.care-card h3{margin-top:0;color:var(--green);}
+.care-card.terra h3{color:var(--terra);}
+.care-card .tag-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 .5rem;}
+.tag{display:inline-block;padding:.2rem .7rem;border-radius:100px;font-size:.75rem;font-weight:500;background:var(--green-pale);color:var(--green);}
+.care-card.terra .tag{background:rgba(184,151,42,.1);color:var(--terra);}
+.compare-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--white);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);}
+.compare-table th{text-align:left;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-light);padding:.875rem 1rem;border-bottom:1px solid var(--border);background:var(--cream-dark);}
+.compare-table td{padding:.875rem 1rem;border-bottom:1px solid var(--border);font-size:.9rem;color:var(--gray);font-weight:300;vertical-align:top;}
+.compare-table tr:last-child td{border-bottom:none;}
+.compare-table td:first-child{font-weight:500;color:var(--charcoal);}
+.highlight-box{background:var(--green-pale);border-left:3px solid var(--green);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.highlight-box p{color:var(--charcoal);font-weight:400;margin:0;}
+.cta-band{background:var(--green);border-radius:var(--r-lg);padding:2.5rem;margin-top:3rem;text-align:center;}
+.cta-band h3{font-family:var(--serif);font-size:1.75rem;font-weight:300;color:#fff;margin-bottom:.5rem;}
+.cta-band p{color:rgba(255,255,255,.7);font-weight:300;margin-bottom:1.5rem;font-size:.95rem;}
+footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;background:var(--cream);}
+.footer-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;}
+.footer-brand p{font-size:.84rem;color:var(--gray);line-height:1.7;margin-top:.75rem;font-weight:300;max-width:270px;}
+.footer-col h4{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.875rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.footer-col a{text-decoration:none;font-size:.875rem;color:var(--gray);transition:color .2s;font-weight:300;}
+.footer-col a:hover{color:var(--charcoal);}
+.footer-bot{max-width:1120px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--gray-light);}
+.footer-bot a{color:var(--gray-light);text-decoration:none;}
+@media(max-width:680px){.footer-in{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-in{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions" width="40" height="40"></div>
+      <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+    </a>
+    <a href="index.html" class="btn btn-outline">← Back to Home</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="page-hero-in">
+    <div class="eyebrow">Resource Guide</div>
+    <h1>Understanding Senior Living Care Types</h1>
+    <p>Not all senior living communities are the same. This guide explains every care level so you can make a confident, informed decision for your family.</p>
+  </div>
+</header>
+
+<div class="page-body">
+
+  <div class="highlight-box">
+    <p>The most common mistake families make is assuming their loved one needs a higher — or lower — level of care than they actually do. Start here, then <a href="index.html">use our Community Finder</a> to match care level to local communities.</p>
+  </div>
+
+  <h2>The Four Main Care Levels</h2>
+
+  <div class="care-card">
+    <h3>Independent Living</h3>
+    <div class="tag-row"><span class="tag">Active Seniors</span><span class="tag">No Daily Care Needed</span><span class="tag">Social Focus</span></div>
+    <p>Independent living is for seniors who are largely self-sufficient but want to simplify their life, enjoy community, and stop worrying about home maintenance. Think of it as resort-style living for older adults — meals, activities, housekeeping, and transportation are available, but there is no medical or personal care staff on-site.</p>
+    <p><strong>Who it's right for:</strong> A senior who can independently manage bathing, dressing, medications, and daily activities, but wants companionship, safety, and less responsibility.</p>
+    <p><strong>Who it's not right for:</strong> Anyone who needs help with daily tasks, has memory impairment, or requires medication management. Independent living communities are not licensed to provide hands-on care.</p>
+    <p><strong>Typical monthly cost in Northern California:</strong> $2,300 – $4,000</p>
+  </div>
+
+  <div class="care-card">
+    <h3>Assisted Living</h3>
+    <div class="tag-row"><span class="tag">Daily Support</span><span class="tag">Licensed Caregivers</span><span class="tag">Most Common Choice</span></div>
+    <p>Assisted living is the most common choice for families navigating this decision. Licensed staff are available 24/7 to help with bathing, dressing, grooming, meals, medication management, and mobility. Residents live in private or semi-private rooms and have access to activities, dining, and social programming — while receiving the level of hands-on care they need.</p>
+    <p><strong>Who it's right for:</strong> Seniors who need help with one or more activities of daily living (ADLs) but do not require skilled nursing or intensive memory care. Also appropriate for seniors whose families can no longer safely provide care at home.</p>
+    <p><strong>Who it's not right for:</strong> Seniors with advanced dementia who wander or have significant behavioral support needs — they typically need a dedicated memory care environment.</p>
+    <p><strong>Typical monthly cost in Northern California:</strong> $3,400 – $7,000</p>
+  </div>
+
+  <div class="care-card terra">
+    <h3>Memory Care</h3>
+    <div class="tag-row"><span class="tag">Dementia / Alzheimer's</span><span class="tag">Secured Environment</span><span class="tag">Specialized Staff</span></div>
+    <p>Memory care is a specialized form of assisted living designed exclusively for seniors with Alzheimer's disease, dementia, or other forms of cognitive decline. These communities have secured environments to prevent wandering, staff trained specifically in dementia care, and programming designed around the cognitive and sensory needs of residents with memory impairment.</p>
+    <p><strong>Who it's right for:</strong> Any senior with a dementia diagnosis — especially those who wander, become disoriented, experience behavioral changes, or can no longer be safely supervised at home or in a standard assisted living setting.</p>
+    <p><strong>Who it's not right for:</strong> Seniors without cognitive impairment. Memory care communities are purpose-built for this population and may not feel appropriate for someone who is cognitively intact.</p>
+    <p><strong>Typical monthly cost in Northern California:</strong> $4,500 – $10,000</p>
+  </div>
+
+  <div class="care-card">
+    <h3>Continuing Care Retirement Communities (CCRCs)</h3>
+    <div class="tag-row"><span class="tag">Aging in Place</span><span class="tag">Multiple Care Levels</span><span class="tag">Couples Friendly</span></div>
+    <p>CCRCs — also called Life Plan Communities — offer independent living, assisted living, and skilled nursing care all on one campus. The key benefit is continuity: as your loved one's needs change, they can transition between care levels without leaving their community or social network. Many CCRCs also accommodate couples where one partner needs care and the other doesn't.</p>
+    <p><strong>Who it's right for:</strong> Seniors planning ahead, couples with different care needs, and families who want to make one decision rather than potentially several moves over time.</p>
+    <p><strong>Who it's not right for:</strong> Families in crisis needing an immediate placement — CCRCs often have waitlists and require financial planning in advance. Entry fees can also be significant.</p>
+    <p><strong>Typical monthly cost in Northern California:</strong> $3,000 – $8,000+ (plus potential entrance fees)</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2>Quick Comparison</h2>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>Care Type</th>
+        <th>Daily Care Provided</th>
+        <th>Memory Support</th>
+        <th>Typical Monthly Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Independent Living</td><td>No — optional services only</td><td>No</td><td>$2,300 – $4,000</td></tr>
+      <tr><td>Assisted Living</td><td>Yes — ADL support</td><td>Limited</td><td>$3,400 – $7,000</td></tr>
+      <tr><td>Memory Care</td><td>Yes — specialized dementia care</td><td>Full specialization</td><td>$4,500 – $10,000</td></tr>
+      <tr><td>CCRC</td><td>Varies by level</td><td>Usually available</td><td>$3,000 – $8,000+</td></tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <h2>What About Board and Care Homes?</h2>
+  <p>Board and care homes — also called Residential Care Facilities for the Elderly (RCFEs) — are small, licensed homes typically serving 6 to 20 residents. They provide the same types of care as assisted living but in a residential house setting rather than a purpose-built facility. They're often more affordable and more intimate, and can be an excellent fit for seniors who would feel overwhelmed or lost in a large campus environment.</p>
+  <p>Many of the communities in our Northern California network include board and care homes alongside larger assisted living communities. <a href="index.html">Use our Community Finder</a> to explore all options in your preferred city.</p>
+
+  <div class="cta-band">
+    <h3>Not sure which level fits your situation?</h3>
+    <p>Our Community Finder walks you through a brief assessment and matches your loved one to real communities in the North State region. Free, no pressure.</p>
+    <a href="index.html" class="btn btn-terra">Start the Community Finder →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-in">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions" width="40" height="40"></div>
+        <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+      </a>
+      <p>Guidance. Support. Peace of Mind. — Honest, transparent placement guidance for families across Northern California.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="independent-living.html">Independent Living</a></li><li><a href="assisted-living.html">Assisted Living</a></li><li><a href="memory-care.html">Memory Care</a></li><li><a href="continuing-care.html">Continuing Care</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="care-type-guide.html">Care Type Guide</a></li><li><a href="tour-checklist.html">Tour Checklist</a></li><li><a href="cost-guide-2026.html">Cost Guide 2026</a></li><li><a href="financial-planning.html">Financial Planning</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="careers.html">Careers</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 North State Senior Solutions. All rights reserved.</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="fee-disclosure.html">Fee Disclosure</a></span>
+  </div>
+</footer>
+</body>
+</html>

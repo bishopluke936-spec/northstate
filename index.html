@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>North State Senior Solutions | Senior Living Placement — Northern California</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+:root {
+  --green:       #1E3D2F;
+  --green-mid:   #2D5443;
+  --green-pale:  #E4EDE7;
+  --terra:       #B8972A;
+  --terra-light: #CDB054;
+  --cream:       #F8F5F0;
+  --cream-dark:  #EDE8DF;
+  --charcoal:    #1A1A1A;
+  --gray:        #6B6460;
+  --gray-light:  #A8A49E;
+  --white:       #FFFFFF;
+  --border:      rgba(26,26,26,0.10);
+  --serif:       'Cormorant Garamond', Georgia, serif;
+  --sans:        'DM Sans', system-ui, sans-serif;
+  --r:           6px;
+  --r-lg:        14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;}
+
+/* ── NAV ─────────────────────────────────────── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(248,245,240,0.94);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+}
+.nav-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.logo-mark img{width:44px;height:44px;object-fit:contain;border-radius:50%;}
+.logo-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--green);letter-spacing:.04em;line-height:1.15;}
+.logo-sub{display:block;font-size:.6rem;font-weight:400;color:var(--terra);letter-spacing:.18em;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:.875rem;color:var(--gray);transition:color .2s;}
+.nav-links a:hover{color:var(--charcoal);}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.35rem;border-radius:100px;font-family:var(--sans);font-size:.875rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all .2s;border:1.5px solid transparent;letter-spacing:.01em;}
+.btn-sm{padding:.5rem 1.1rem;font-size:.8125rem;}
+.btn-lg{padding:.9rem 2rem;font-size:1rem;}
+.btn-primary{background:var(--green);color:#fff;border-color:var(--green);}
+.btn-primary:hover{background:var(--green-mid);border-color:var(--green-mid);transform:translateY(-1px);box-shadow:0 6px 20px rgba(44,74,62,.22);}
+.btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
+.btn-outline:hover{background:var(--green-pale);transform:translateY(-1px);}
+.btn-terra{background:var(--terra);color:#fff;border-color:var(--terra);}
+.btn-terra:hover{background:var(--terra-light);border-color:var(--terra-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(193,122,69,.28);}
+
+/* ── HERO ─────────────────────────────────────── */
+.hero{padding:5.5rem 2rem 4.5rem;max-width:1120px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem 1rem;background:var(--green-pale);border-radius:100px;font-size:.8rem;font-weight:500;color:var(--green);margin-bottom:1.75rem;letter-spacing:.02em;}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--terra);flex-shrink:0;}
+h1{font-family:var(--serif);font-size:clamp(2.8rem,6vw,4.6rem);font-weight:300;line-height:1.08;letter-spacing:-.025em;color:var(--charcoal);max-width:820px;margin-bottom:1.4rem;}
+h1 em{font-style:italic;color:var(--green);}
+.hero-sub{font-size:1.1rem;color:var(--gray);max-width:520px;line-height:1.7;margin-bottom:2.25rem;font-weight:300;}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.875rem;align-items:center;margin-bottom:2.5rem;}
+.hero-note{font-size:.8125rem;color:var(--gray-light);display:flex;align-items:center;gap:.5rem;margin-bottom:4rem;}
+.hero-note::before{content:'';width:18px;height:1px;background:var(--gray-light);flex-shrink:0;}
+.stat-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;border-radius:var(--r-lg);overflow:hidden;background:var(--border);}
+.stat-item{background:var(--white);padding:1.5rem 1.75rem;}
+.stat-num{font-family:var(--serif);font-size:2.1rem;font-weight:400;color:var(--green);letter-spacing:-.03em;line-height:1;}
+.stat-label{font-size:.8125rem;color:var(--gray);margin-top:.35rem;font-weight:300;}
+
+/* ── UTILITY ──────────────────────────────────── */
+.wrap{max-width:1120px;margin:0 auto;padding:5rem 2rem;}
+.wrap-sm{max-width:820px;margin:0 auto;padding:5rem 2rem;}
+.sec-tag{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:.875rem;}
+.sec-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3.1rem);font-weight:300;line-height:1.12;letter-spacing:-.025em;margin-bottom:1rem;}
+.sec-sub{font-size:1rem;color:var(--gray);line-height:1.7;max-width:540px;font-weight:300;}
+.bg-white{background:var(--white);}
+.bg-dark{background:var(--cream-dark);}
+.bg-green{background:var(--green);}
+
+/* ── PROBLEM ──────────────────────────────────── */
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start;margin-top:3.5rem;}
+.prob-text p{color:var(--gray);line-height:1.75;font-weight:300;margin-bottom:1rem;}
+.prob-text h3{font-family:var(--serif);font-size:1.7rem;font-weight:300;line-height:1.3;margin-bottom:1rem;}
+.quote-card{background:var(--green);color:#fff;padding:2.5rem;border-radius:var(--r-lg);position:relative;overflow:hidden;}
+.quote-card::before{content:'\201C';font-family:var(--serif);font-size:8rem;line-height:.8;color:rgba(255,255,255,.1);position:absolute;top:1.2rem;left:1.5rem;pointer-events:none;}
+.quote-card p{font-family:var(--serif);font-size:1.3rem;font-weight:300;font-style:italic;line-height:1.55;position:relative;z-index:1;margin-bottom:1.25rem;}
+.quote-attr{font-size:.8rem;opacity:.6;position:relative;z-index:1;}
+.trust-badge{display:flex;align-items:flex-start;gap:.875rem;background:var(--cream-dark);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.25rem 1.5rem;margin-top:1.25rem;}
+.badge-ico{width:38px;height:38px;flex-shrink:0;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;}
+.badge-ico svg{width:18px;height:18px;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.badge-copy h4{font-size:.9rem;font-weight:500;margin-bottom:.2rem;}
+.badge-copy p{font-size:.84rem;color:var(--gray);line-height:1.55;font-weight:300;}
+
+/* ── HOW IT WORKS ─────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:3.5rem;position:relative;}
+.steps::before{content:'';position:absolute;top:36px;left:calc(16.7% + 18px);right:calc(16.7% + 18px);height:1px;background:linear-gradient(90deg,var(--green),var(--terra),var(--green));opacity:.4;z-index:0;}
+.step{padding:0 2rem;position:relative;z-index:1;}
+.step-num{width:72px;height:72px;border-radius:50%;background:var(--green);color:#fff;font-family:var(--serif);font-size:1.75rem;font-weight:300;display:flex;align-items:center;justify-content:center;margin-bottom:1.4rem;}
+.step:nth-child(2) .step-num{background:var(--terra);}
+.step-title{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin-bottom:.625rem;}
+.step-text{font-size:.9rem;color:var(--gray);line-height:1.7;font-weight:300;}
+
+/* ── DIFFERENTIATORS ──────────────────────────── */
+.diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:var(--border);border-radius:var(--r-lg);overflow:hidden;margin-top:3.5rem;}
+.diff-cell{background:var(--cream);padding:2.25rem;}
+.diff-ico{width:44px;height:44px;border-radius:9px;background:var(--green-pale);display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;}
+.diff-ico svg{width:22px;height:22px;stroke:var(--green);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.diff-cell:nth-child(2) .diff-ico,.diff-cell:nth-child(3) .diff-ico{background:rgba(193,122,69,.1);}
+.diff-cell:nth-child(2) .diff-ico svg,.diff-cell:nth-child(3) .diff-ico svg{stroke:var(--terra);}
+.diff-title{font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:.5rem;}
+.diff-text{font-size:.9rem;color:var(--gray);line-height:1.7;font-weight:300;}
+
+/* ── CARE TYPES ───────────────────────────────── */
+.care-tag{color:rgba(255,255,255,.5);}
+.care-title{color:#fff;}
+.care-sub{color:rgba(255,255,255,.6);}
+.care-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;}
+.care-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:1.75rem;transition:all .25s;cursor:default;}
+.care-card:hover{background:rgba(255,255,255,.13);transform:translateY(-3px);}
+.care-ico{width:42px;height:42px;border-radius:8px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;}
+.care-ico svg{width:20px;height:20px;stroke:rgba(255,255,255,.9);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+.care-card-title{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:#fff;margin-bottom:.4rem;}
+.care-card-desc{font-size:.84rem;color:rgba(255,255,255,.58);line-height:1.6;font-weight:300;}
+
+/* ── CTA BAND ─────────────────────────────────── */
+.cta-section{padding:6rem 2rem;text-align:center;background:var(--white);}
+.cta-inner{max-width:600px;margin:0 auto;}
+.cta-inner .sec-title{margin-bottom:1rem;}
+.cta-inner .sec-sub{margin:0 auto 2.5rem;text-align:center;max-width:100%;}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.cta-note{margin-top:1.25rem;font-size:.8rem;color:var(--gray-light);}
+
+/* ── FOOTER ───────────────────────────────────── */
+footer{border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;background:var(--cream);}
+.footer-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;}
+.footer-brand p{font-size:.84rem;color:var(--gray);line-height:1.7;margin-top:.75rem;font-weight:300;max-width:270px;}
+.footer-col h4{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.875rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.footer-col a{text-decoration:none;font-size:.875rem;color:var(--gray);transition:color .2s;font-weight:300;}
+.footer-col a:hover{color:var(--charcoal);}
+.footer-bot{max-width:1120px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--gray-light);}
+.footer-bot a{color:var(--gray-light);text-decoration:none;}
+.footer-bot a:hover{color:var(--gray);}
+
+/* ── MODAL ────────────────────────────────────── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(20,20,20,.55);z-index:500;align-items:center;justify-content:center;padding:1rem;}
+.overlay.open{display:flex;}
+.modal{background:#fff;border-radius:18px;padding:2.5rem;max-width:500px;width:100%;position:relative;animation:modal-in .28s ease;}
+@keyframes modal-in{from{opacity:0;transform:scale(.96) translateY(10px)}to{opacity:1;transform:none}}
+.modal-close{position:absolute;top:1.1rem;right:1.1rem;background:none;border:none;cursor:pointer;color:var(--gray);font-size:1.1rem;padding:.35rem;border-radius:4px;transition:background .15s;}
+.modal-close:hover{background:var(--cream-dark);}
+.modal h3{font-family:var(--serif);font-size:1.75rem;font-weight:400;margin-bottom:.4rem;}
+.modal > p{color:var(--gray);font-size:.9rem;font-weight:300;margin-bottom:1.5rem;line-height:1.6;}
+.fg{margin-bottom:.875rem;}
+.fg label{display:block;font-size:.78rem;font-weight:500;margin-bottom:.3rem;color:var(--charcoal);}
+.fg input,.fg select{width:100%;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:var(--r);font-family:var(--sans);font-size:.9rem;color:var(--charcoal);background:var(--cream);outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none;}
+.fg input:focus,.fg select:focus{border-color:var(--green);}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.modal-submit{width:100%;padding:.85rem;background:var(--green);color:#fff;border:none;border-radius:100px;font-family:var(--sans);font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.5rem;transition:all .2s;}
+.modal-submit:hover{background:var(--green-mid);}
+.modal-foot{text-align:center;font-size:.775rem;color:var(--gray-light);margin-top:.875rem;}
+
+/* ── ANIMATIONS ───────────────────────────────── */
+.fade{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.fade.in{opacity:1;transform:none;}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media(max-width:920px){
+  .prob-grid,.steps,.diff-grid{grid-template-columns:1fr;}
+  .steps::before{display:none;}
+  .care-grid{grid-template-columns:1fr 1fr;}
+  .footer-in{grid-template-columns:1fr 1fr;}
+  .nav-links{display:none;}
+}
+@media(max-width:580px){
+  h1{font-size:2.3rem;}
+  .stat-bar{grid-template-columns:1fr;}
+  .care-grid{grid-template-columns:1fr;}
+  .footer-in{grid-template-columns:1fr;}
+  .fg-row{grid-template-columns:1fr;}
+}
+
+/* ── ASSESSMENT OVERLAY ───────────────────────── */
+#assessment-overlay{display:none;position:fixed;inset:0;z-index:1000;background:var(--cream);overflow-y:auto;}
+#assessment-overlay.open{display:block;}
+.asmnt-nav{position:sticky;top:0;z-index:1100;background:rgba(248,245,240,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.asmnt-nav-in{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+.asmnt-back{background:none;border:1.5px solid var(--border);border-radius:100px;padding:.45rem 1.1rem;font-family:var(--sans);font-size:.85rem;color:var(--gray);cursor:pointer;transition:all .2s;}
+.asmnt-back:hover{border-color:var(--green);color:var(--green);}
+.asmnt-logo-name{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:var(--green);}
+.asmnt-progress-wrap{background:var(--white);border-bottom:1px solid var(--border);padding:1.1rem 2rem;}
+.asmnt-progress-inner{max-width:780px;margin:0 auto;}
+.asmnt-progress-top{display:flex;justify-content:space-between;margin-bottom:.5rem;}
+.asmnt-progress-label{font-size:.78rem;font-weight:500;color:var(--gray);}
+.asmnt-step-counter{font-size:.78rem;color:var(--gray-light);}
+.asmnt-bar-bg{height:5px;background:var(--cream-dark);border-radius:100px;overflow:hidden;}
+.asmnt-bar-fill{height:100%;background:linear-gradient(90deg,var(--green),var(--terra));border-radius:100px;transition:width .4s ease;}
+.asmnt-dots{display:flex;gap:.4rem;margin-top:.6rem;}
+.asmnt-dot{width:7px;height:7px;border-radius:50%;background:var(--cream-dark);transition:all .3s;}
+.asmnt-dot.done{background:var(--green);}
+.asmnt-dot.active{background:var(--terra);transform:scale(1.3);}
+.asmnt-wrap{max-width:780px;margin:2rem auto 5rem;padding:0 2rem;}
+.asmnt-step{display:none;}
+.asmnt-step.active{display:block;animation:astep .3s ease;}
+@keyframes astep{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.asmnt-sec-tag{font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:.5rem;}
+.asmnt-sec-title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.2rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;margin-bottom:.5rem;}
+.asmnt-sec-sub{font-size:.92rem;color:var(--gray);font-weight:300;line-height:1.65;margin-bottom:2rem;}
+.afield{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.4rem;margin-bottom:.875rem;transition:border-color .2s;}
+.afield:focus-within{border-color:var(--green);}
+.afield.error{border-color:#d97070;}
+.afield-label{display:block;font-weight:500;font-size:.88rem;margin-bottom:.8rem;color:var(--charcoal);}
+.afield-label .req{color:var(--terra);margin-left:2px;}
+.afield input[type=text],.afield input[type=tel],.afield input[type=email],.afield textarea,.afield select{
+  width:100%;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:var(--r);
+  font-family:var(--sans);font-size:.88rem;color:var(--charcoal);background:var(--cream);outline:none;transition:border-color .2s;}
+.afield input:focus,.afield textarea:focus{border-color:var(--green);background:var(--white);}
+.afield textarea{min-height:80px;resize:vertical;}
+.afield-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem;}
+.aopts{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.4rem;}
+.aopt{display:flex;align-items:flex-start;gap:.5rem;padding:.55rem .8rem;border:1.5px solid var(--border);border-radius:var(--r);cursor:pointer;transition:all .18s;background:var(--cream);}
+.aopt:hover{border-color:var(--green-mid);background:var(--green-pale);}
+.aopt input{margin-top:2px;accent-color:var(--green);flex-shrink:0;}
+.aopt span{font-size:.84rem;line-height:1.4;font-weight:300;}
+.aopt.sel{border-color:var(--green);background:var(--green-pale);}
+.aerr{font-size:.78rem;color:#c0392b;margin-top:.35rem;display:none;}
+.afield.error .aerr{display:block;}
+.aform-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--border);}
+.abtn-next,.abtn-back,.abtn-submit{padding:.75rem 1.75rem;border-radius:100px;font-family:var(--sans);font-size:.9rem;font-weight:500;cursor:pointer;transition:all .2s;border:1.5px solid transparent;}
+.abtn-next,.abtn-submit{background:var(--green);color:#fff;}
+.abtn-next:hover{background:var(--green-mid);transform:translateY(-1px);}
+.abtn-submit{background:var(--terra);}
+.abtn-submit:hover{background:var(--terra-light);transform:translateY(-1px);}
+.abtn-back{background:transparent;color:var(--gray);border-color:var(--border);}
+.abtn-back:hover{border-color:var(--gray);color:var(--charcoal);}
+.adisclaimer{font-size:.76rem;color:var(--gray-light);line-height:1.6;margin-top:1.25rem;padding:.875rem;background:var(--cream-dark);border-radius:var(--r);}
+/* Results */
+#a-loading{display:none;text-align:center;padding:4rem 2rem;}
+.aspinner{width:40px;height:40px;border:3px solid var(--green-pale);border-top-color:var(--green);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 1.25rem;}
+@keyframes spin{to{transform:rotate(360deg)}}
+#a-results{display:none;}
+.a-results-header{text-align:center;padding:2.5rem 2rem 1.5rem;max-width:780px;margin:0 auto;}
+.a-results-grid{max-width:780px;margin:0 auto 4rem;padding:0 2rem;display:flex;flex-direction:column;gap:1.1rem;}
+.amatch-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:box-shadow .2s;}
+.amatch-card:hover{box-shadow:0 6px 24px rgba(44,74,62,.1);}
+.amatch-top{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:1.4rem 1.6rem .75rem;}
+.amatch-name{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:.15rem;}
+.amatch-city{font-size:.82rem;color:var(--gray);font-weight:300;}
+.ascore-pct{font-family:var(--serif);font-size:2rem;font-weight:300;line-height:1;color:var(--green);}
+.ascore-pct.med{color:var(--terra);}
+.ascore-label{font-size:.68rem;color:var(--gray-light);letter-spacing:.06em;text-transform:uppercase;text-align:right;}
+.amatch-bar-wrap{padding:0 1.6rem .6rem;}
+.amatch-bar-bg{height:5px;background:var(--cream-dark);border-radius:100px;overflow:hidden;}
+.amatch-bar-fill{height:100%;border-radius:100px;transition:width 1s ease .2s;}
+.abar-green{background:linear-gradient(90deg,var(--green),var(--green-mid));}
+.abar-terra{background:linear-gradient(90deg,var(--terra),var(--terra-light));}
+.amatch-body{padding:.6rem 1.6rem 1.25rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.amatch-detail h4{font-size:.68rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-light);margin-bottom:.4rem;}
+.amatch-detail p{font-size:.84rem;color:var(--gray);font-weight:300;line-height:1.55;}
+.amatch-factors{display:flex;flex-wrap:wrap;gap:.35rem;padding:0 1.6rem 1.25rem;}
+.afactor{display:inline-flex;align-items:center;gap:.25rem;padding:.25rem .6rem;border-radius:100px;font-size:.75rem;}
+.afactor.yes{background:var(--green-pale);color:var(--green);}
+.afactor.no{background:#fef3ed;color:#9a5c30;}
+.amatch-footer{padding:.875rem 1.6rem;background:var(--cream);border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;}
+.amatch-rate{font-size:.84rem;color:var(--gray);}
+.amatch-rate strong{color:var(--charcoal);font-weight:500;}
+.a-success-banner{background:var(--green-pale);border:1px solid rgba(44,74,62,.2);border-radius:var(--r-lg);padding:1.1rem 1.4rem;display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1.75rem;max-width:700px;margin-left:auto;margin-right:auto;}
+.a-success-ico{width:32px;height:32px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.a-success-ico svg{width:14px;height:14px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:640px){
+  .afield-row{grid-template-columns:1fr;}
+  .aopts{grid-template-columns:1fr;}
+  .amatch-body{grid-template-columns:1fr;}
+  .amatch-top{grid-template-columns:1fr;}
+}
+</style>
+<script type="text/javascript">     (function(c,l,a,r,i,t,y){         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);     })(window, document, "clarity", "script", "wse03zx8sz"); </script>
+</head>
+<body>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav>
+  <div class="nav-in">
+    <a href="#" class="logo">
+      <div class="logo-mark">
+        <img src="logo.png" alt="North State Senior Solutions icon" width="40" height="40">
+      </div>
+      <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#care">Care Types</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ul>
+    <a id="btn-nav-search" href="#" class="btn btn-primary btn-sm">Start Your Search</a>
+  </div>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section>
+  <div class="hero">
+    <div class="eyebrow"><span class="eyebrow-dot"></span>Free guidance for families across Northern California</div>
+    <h1>Finding the right<br><em>community for your loved one</em><br>shouldn't feel impossible.</h1>
+    <p class="hero-sub">We personally guide families through the search for assisted living, memory care, and independent living — with honest advice backed by industry insights.</p>
+    <div class="hero-ctas">
+      <button type="button" id="btn-assessment-hero" class="btn btn-terra btn-lg">Community Finder</button>
+      <button type="button" id="btn-advisor-hero" class="btn btn-outline btn-lg">Connect with an Advisor →</button>
+    </div>
+    
+    <div class="stat-bar fade">
+      <div class="stat-item">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Communities in the North State Region</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Free to the consumer</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" style="font-size:1.1rem;line-height:1.2">Family<br>Owned</div>
+        <div class="stat-label">Family Owned and Operated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ PROBLEM ════════════════════ -->
+<section id="about">
+  <div class="wrap">
+    <p class="sec-tag">The Problem We Solve</p>
+    <h2 class="sec-title">This decision is hard enough<br>without the wrong kind of help.</h2>
+    <div class="prob-grid">
+      <div class="prob-text fade">
+        <h3>Most families are navigating this for the first time, under enormous pressure.</h3>
+        <p>A parent just got a diagnosis. The hospital is calling about discharge. You have two weeks to figure something out that you've never done before — while grieving, working, and managing a household.</p>
+        <p>The big national referral services flood your inbox with facilities and follow-up calls. Their recommendations reflect who pays them the most, not who fits your family best. A 2024 Senate inquiry found exactly that — and investigative reporting confirmed it.</p>
+        <p>We work differently. We visit every community we recommend. We're honest about what we don't know. And we stay with you through the whole process — not just until we make the introduction.</p>
+      </div>
+      <div class="fade d2">
+        <div class="quote-card">
+          <p>"I started this because I watched families in our community get handed a generic list of facilities by services that had never set foot inside them — and then get bombarded with calls from places they'd never heard of. That's not guidance. That's lead generation.</p>
+          <p style="margin-top:.875rem;">The North State is my home. These are my neighbors. They deserve someone who actually knows the communities, tells the truth, and picks up the phone."</p>
+          <p class="quote-attr">— Luke Bishop, Founder, North State Senior Solutions</p>
+        </div>
+        <div class="trust-badge">
+          <div class="badge-ico">
+            <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div class="badge-copy">
+            <h4>Our fee transparency commitment</h4>
+            <p>We'll always tell you which facilities pay us a referral fee — and which ones don't. That information is yours to factor into your decision.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ HOW IT WORKS ════════════════════ -->
+<section id="how" class="bg-white">
+  <div class="wrap">
+    <p class="sec-tag">The Process</p>
+    <h2 class="sec-title">Three steps to clarity.</h2>
+    <p class="sec-sub">Most families go from overwhelmed to confident in 2–3 weeks. Here's how we get there together.</p>
+    <div class="steps">
+      <div class="step fade">
+        <div class="step-num">1</div>
+        <h3 class="step-title">Tell us about your situation</h3>
+        <p class="step-text">Complete a brief assessment or call us directly. We ask about care needs, location, budget, and timeline — and we actually listen. No hard sell, no immediate flood of facility calls to your phone.</p>
+      </div>
+      <div class="step fade d2">
+        <div class="step-num">2</div>
+        <h3 class="step-title">We build your shortlist</h3>
+        <p class="step-text">We curate 3–5 communities that genuinely fit your family's situation — not just everyone in our network. We share honest notes on each, including concerns. Then we help you schedule tours.</p>
+      </div>
+      <div class="step fade d3">
+        <div class="step-num">3</div>
+        <h3 class="step-title">We guide you through the decision</h3>
+        <p class="step-text">We're with you through tours, questions, the residency agreement, and move-in day. And we follow up afterward — because a placement that goes well matters to us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ DIFFERENTIATORS ════════════════════ -->
+<section id="why">
+  <div class="wrap">
+    <p class="sec-tag">Why North State</p>
+    <h2 class="sec-title">We do this differently.</h2>
+    <p class="sec-sub">We built this service around what families told us they needed but couldn't find from anyone else.</p>
+    <div class="diff-grid">
+      <div class="diff-cell fade">
+        <div class="diff-ico">
+          <svg viewBox="0 0 24 24"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </div>
+        <h3 class="diff-title">We visit every facility we recommend</h3>
+        <p class="diff-text">Every community in our network has been visited in person. We've met the staff, walked the halls, and assessed the culture — before we ever recommend it to a family.</p>
+      </div>
+      <div class="diff-cell fade d1">
+        <div class="diff-ico">
+          <svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h3 class="diff-title">We steward your information</h3>
+        <p class="diff-text">Other services send a blanket referral the moment you search — and suddenly you're fielding 30+ calls within two hours from communities you've never heard of. We keep your information completely private until you're ready to commit to a community. You stay in control, not your inbox.</p>
+      </div>
+      <div class="diff-cell fade d2">
+        <div class="diff-ico">
+          <svg viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+        </div>
+        <h3 class="diff-title">A real person guides you, start to finish</h3>
+        <p class="diff-text">You'll work with the same advisor from intake through move-in day. We don't hand you off to a call center, and we don't disappear after the first call. This is a relationship, not a transaction.</p>
+      </div>
+      <div class="diff-cell fade d3">
+        <div class="diff-ico">
+          <svg viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <h3 class="diff-title">We know this region deeply</h3>
+        <p class="diff-text">We're not a national platform with a local page. We live and work in the Northern California, and we know which communities in Redding, Chico, and across Northern California are the right fit for different needs and budgets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CARE TYPES ════════════════════ -->
+<section id="care" class="bg-green">
+  <div class="wrap">
+    <p class="sec-tag care-tag">What We Help With</p>
+    <h2 class="sec-title care-title">Every stage of the journey.</h2>
+    <p class="sec-sub care-sub">We help families find the right setting for where their loved one is right now — and plan for what might come next.</p>
+    <div class="care-grid">
+      <div class="care-card fade">
+        <div class="care-ico">
+          <svg viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        </div>
+        <h3 class="care-card-title">Independent Living</h3>
+        <p class="care-card-desc">For active seniors who want community, amenities, and freedom from home maintenance — without daily care services.</p>
+      </div>
+      <div class="care-card fade d1">
+        <div class="care-ico">
+          <svg viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3 class="care-card-title">Assisted Living</h3>
+        <p class="care-card-desc">Communities offering help with daily activities — meals, medication management, bathing — while preserving as much independence as possible.</p>
+      </div>
+      <div class="care-card fade d2">
+        <div class="care-ico">
+          <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        </div>
+        <h3 class="care-card-title">Memory Care</h3>
+        <p class="care-card-desc">Specialized communities for seniors with Alzheimer's, dementia, and other cognitive decline. Safety and dignity, together.</p>
+      </div>
+      <div class="care-card fade d3">
+        <div class="care-ico">
+          <svg viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5m4 0H9"/></svg>
+        </div>
+        <h3 class="care-card-title">Continuing Care (CCRC)</h3>
+        <p class="care-card-desc">Communities offering a full continuum — from independent living through skilled nursing — so couples can stay together as needs change.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════ FINAL CTA ════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner fade">
+    <p class="sec-tag" style="text-align:center;">Get Started</p>
+    <h2 class="sec-title">Ready to find the right community?</h2>
+    <p class="sec-sub">Whether you have two weeks or six months, we'll meet you where you are. Our service is always free to families across the Northern California.</p>
+    <div class="cta-btns">
+      <button type="button" id="btn-assessment-cta" class="btn btn-terra btn-lg">Community Finder</button>
+      <button type="button" id="btn-advisor-cta" class="btn btn-outline btn-lg">Connect with an Advisor</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ FOOTER ════════════════════ -->
+<footer>
+  <div class="footer-in">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions icon" width="40" height="40"></div>
+        <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+      </a>
+      <p>Guidance. Support. Peace of Mind. — Honest, transparent placement guidance for families across Northern California. Free to families. Independent of any facility chain.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="independent-living.html">Independent Living</a></li>
+        <li><a href="assisted-living.html">Assisted Living</a></li>
+        <li><a href="memory-care.html">Memory Care</a></li>
+        <li><a href="continuing-care.html">Continuing Care</a></li>
+      </ul>
+    </div>
+    <div class="footer-col" id="resources">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="care-type-guide.html">Care Type Guide</a></li>
+        <li><a href="tour-checklist.html">Tour Checklist</a></li>
+        <li><a href="cost-guide-2026.html">Cost Guide 2026</a></li>
+        <li><a href="financial-planning.html">Financial Planning</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 North State Senior Solutions. All rights reserved.</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="fee-disclosure.html">Fee Disclosure</a></span>
+  </div>
+</footer>
+
+<!-- ════════════════════ MODAL ════════════════════ -->
+<div class="overlay" id="modal">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+
+    <!-- FORM VIEW -->
+    <div id="form-view">
+      <h3 id="modal-title">Let's find the right community.</h3>
+      <p>Tell us a bit about your situation and we'll be in touch shortly. No commitment, no pressure — just genuine help.</p>
+      <form
+        name="advisor-inquiry"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onsubmit="handleSubmit(event)"
+      >
+        <!-- Honeypot spam filter — hidden from real users -->
+        <input type="hidden" name="form-name" value="advisor-inquiry">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-name">Your name *</label>
+            <input id="f-name" type="text" name="name" placeholder="Jane Smith" autocomplete="name" required>
+          </div>
+          <div class="fg">
+            <label for="f-phone">Phone number *</label>
+            <input id="f-phone" type="tel" name="phone" placeholder="(530) 555-0100" autocomplete="tel" required>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-email">Email address *</label>
+          <input id="f-email" type="email" name="email" placeholder="jane@example.com" autocomplete="email" required>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="f-care">Type of care needed</label>
+            <select id="f-care" name="care-type">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Independent Living">Independent Living</option>
+              <option value="Assisted Living">Assisted Living</option>
+              <option value="Memory Care">Memory Care</option>
+              <option value="Continuing Care (CCRC)">Continuing Care (CCRC)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="f-timeline">Your timeline</label>
+            <select id="f-timeline" name="timeline">
+              <option value="Within 2 weeks — urgent">Within 2 weeks — urgent</option>
+              <option value="1–3 months">1–3 months</option>
+              <option value="3–6 months">3–6 months</option>
+              <option value="Just researching">Just researching</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="f-city">City or zip code</label>
+          <input id="f-city" type="text" name="location" placeholder="Redding, CA">
+        </div>
+        <button type="submit" class="modal-submit">Get My Free Consultation →</button>
+        <p class="modal-foot">🔒 Your information is never sold or shared. Our service is always free to families.</p>
+      </form>
+    </div>
+
+    <!-- SUCCESS VIEW (shown after submission) -->
+    <div id="success-view" style="display:none;text-align:center;padding:1.5rem 0;">
+      <div style="width:56px;height:56px;background:var(--green-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C4A3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3 style="font-family:var(--serif);font-size:1.75rem;font-weight:400;margin-bottom:.5rem;">We've got your inquiry!</h3>
+      <p style="color:var(--gray);font-size:.95rem;line-height:1.7;font-weight:300;max-width:340px;margin:0 auto 1.5rem;">Thank you for reaching out. We'll review your information and be in touch shortly.</p>
+      <button class="btn btn-outline" onclick="closeModal()" style="margin:0 auto;">Close</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     ASSESSMENT OVERLAY — full screen, opens over
+     the main site when "Community Finder" clicked
+════════════════════════════════════════════════ -->
+
+<!-- Hidden form so Netlify detects it at build time -->
+<form name="care-assessment" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name"><input type="email" name="email"><input type="tel" name="phone">
+  <input type="text" name="care_level"><input type="text" name="preferred_location">
+  <input type="text" name="budget"><input type="text" name="timeline">
+  <input type="text" name="senior_name"><input type="text" name="senior_age">
+  <input type="text" name="mobility"><input type="text" name="community_preferences">
+  <input type="text" name="funding"><textarea name="lifestyle"></textarea>
+  <textarea name="concerns"></textarea>
+</form>
+
+<div id="assessment-overlay">
+
+  <!-- Assessment Nav -->
+  <nav class="asmnt-nav">
+    <div class="asmnt-nav-in">
+      <button class="asmnt-back" onclick="closeAssessment()">← Back to Site</button>
+      <span class="asmnt-logo-name">NORTH STATE &nbsp;<span style="color:var(--terra);font-size:.85rem;letter-spacing:.1em;">SENIOR SOLUTIONS</span></span>
+      <span style="width:120px;"></span>
+    </div>
+  </nav>
+
+  <!-- Progress Bar -->
+  <div class="asmnt-progress-wrap" id="a-progress-wrap">
+    <div class="asmnt-progress-inner">
+      <div class="asmnt-progress-top">
+        <span class="asmnt-progress-label" id="a-progress-label">Section 1 of 7 — Who Is Searching?</span>
+        <span class="asmnt-step-counter" id="a-step-counter">1 / 7</span>
+      </div>
+      <div class="asmnt-bar-bg"><div class="asmnt-bar-fill" id="a-bar-fill" style="width:14%"></div></div>
+      <div class="asmnt-dots" id="a-dots"></div>
+    </div>
+  </div>
+
+  <!-- ─── FORM STEPS ─── -->
+  <div class="asmnt-wrap" id="a-form-wrap">
+
+    <!-- STEP 1: WHO IS SEARCHING -->
+    <div class="asmnt-step active" id="a-step-1">
+      <p class="asmnt-sec-tag">Section 1 of 7</p>
+      <h2 class="asmnt-sec-title">Who is searching?</h2>
+      <p class="asmnt-sec-sub">Let's start with your contact information so we know how to follow up.</p>
+
+      <div class="afield">
+        <label class="afield-label">Who are you searching for?</label>
+        <div class="aopts">
+          <label class="aopt"><input type="radio" name="a_who" value="Myself"><span>Myself</span></label>
+          <label class="aopt"><input type="radio" name="a_who" value="A parent"><span>A parent</span></label>
+          <label class="aopt"><input type="radio" name="a_who" value="A spouse/partner"><span>A spouse / partner</span></label>
+          <label class="aopt"><input type="radio" name="a_who" value="Another family member"><span>Another family member</span></label>
+          <label class="aopt"><input type="radio" name="a_who" value="A friend"><span>A friend</span></label>
+          <label class="aopt"><input type="radio" name="a_who" value="Other"><span>Other</span></label>
+        </div>
+      </div>
+      <div class="afield-row">
+        <div class="afield" id="a-f-name-wrap">
+          <label class="afield-label" for="a-name">Your full name <span class="req">*</span></label>
+          <input type="text" id="a-name" name="name" placeholder="Jane Smith" autocomplete="name">
+          <p class="aerr">Please enter your name.</p>
+        </div>
+        <div class="afield" id="a-f-phone-wrap">
+          <label class="afield-label" for="a-phone">Best phone number <span class="req">*</span></label>
+          <input type="tel" id="a-phone" name="phone" placeholder="(530) 555-0100" autocomplete="tel">
+          <p class="aerr">Please enter your phone number.</p>
+        </div>
+      </div>
+      <div class="afield" id="a-f-email-wrap">
+        <label class="afield-label" for="a-email">Email address <span class="req">*</span> <span style="font-size:.76rem;color:var(--gray);font-weight:300;">— your match results will be sent here</span></label>
+        <input type="email" id="a-email" name="email" placeholder="jane@example.com" autocomplete="email">
+        <p class="aerr">Please enter a valid email.</p>
+      </div>
+      <div class="afield-row">
+        <div class="afield">
+          <label class="afield-label">Preferred contact method</label>
+          <div class="aopts" style="grid-template-columns:1fr 1fr;">
+            <label class="aopt"><input type="radio" name="a_contact_method" value="Phone call"><span>Phone call</span></label>
+            <label class="aopt"><input type="radio" name="a_contact_method" value="Text"><span>Text message</span></label>
+            <label class="aopt"><input type="radio" name="a_contact_method" value="Email"><span>Email</span></label>
+            <label class="aopt"><input type="radio" name="a_contact_method" value="No preference"><span>No preference</span></label>
+          </div>
+        </div>
+        <div class="afield">
+          <label class="afield-label">Best time to reach you</label>
+          <div class="aopts" style="grid-template-columns:1fr 1fr;">
+            <label class="aopt"><input type="radio" name="a_contact_time" value="Morning"><span>Morning</span></label>
+            <label class="aopt"><input type="radio" name="a_contact_time" value="Afternoon"><span>Afternoon</span></label>
+            <label class="aopt"><input type="radio" name="a_contact_time" value="Evening"><span>Evening</span></label>
+            <label class="aopt"><input type="radio" name="a_contact_time" value="Anytime"><span>Anytime</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="aform-nav"><div></div><button class="abtn-next" onclick="aNext()">Next: About the Senior →</button></div>
+    </div>
+
+    <!-- STEP 2: ABOUT THE SENIOR -->
+    <div class="asmnt-step" id="a-step-2">
+      <p class="asmnt-sec-tag">Section 2 of 7</p>
+      <h2 class="asmnt-sec-title">About the senior</h2>
+      <p class="asmnt-sec-sub">Help us understand who we're finding a home for.</p>
+
+      <div class="afield-row">
+        <div class="afield">
+          <label class="afield-label" for="a-senior-name">Senior's full name</label>
+          <input type="text" id="a-senior-name" name="senior_name" placeholder="Robert Smith">
+        </div>
+        <div class="afield">
+          <label class="afield-label">Senior's age</label>
+          <div class="aopts" style="grid-template-columns:1fr 1fr;">
+            <label class="aopt"><input type="radio" name="a_age" value="Under 65"><span>Under 65</span></label>
+            <label class="aopt"><input type="radio" name="a_age" value="65–74"><span>65–74</span></label>
+            <label class="aopt"><input type="radio" name="a_age" value="75–84"><span>75–84</span></label>
+            <label class="aopt"><input type="radio" name="a_age" value="85–94"><span>85–94</span></label>
+            <label class="aopt"><input type="radio" name="a_age" value="95+"><span>95+</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label">Current living situation</label>
+        <div class="aopts">
+          <label class="aopt"><input type="radio" name="a_living" value="Living independently at home"><span>Living independently at home</span></label>
+          <label class="aopt"><input type="radio" name="a_living" value="Living with family"><span>Living with family</span></label>
+          <label class="aopt"><input type="radio" name="a_living" value="Hospital"><span>Hospital</span></label>
+          <label class="aopt"><input type="radio" name="a_living" value="Skilled nursing/rehab"><span>Skilled nursing / rehab</span></label>
+          <label class="aopt"><input type="radio" name="a_living" value="Assisted living"><span>Assisted living</span></label>
+          <label class="aopt"><input type="radio" name="a_living" value="Memory care"><span>Memory care</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-senior-loc">Where is the senior currently located?</label>
+        <input type="text" id="a-senior-loc" name="senior_location" placeholder="Redding, CA">
+      </div>
+      <div class="afield">
+        <label class="afield-label">Why are you exploring senior living now? <em style="font-weight:300;color:var(--gray)">(select all that apply)</em></label>
+        <div class="aopts">
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Recent hospitalization"><span>Recent hospitalization</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Hospital discharge"><span>Hospital discharge planning</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Dementia/memory concerns"><span>Dementia / memory concerns</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Falls/safety concerns"><span>Falls or safety concerns</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Difficulty with daily activities"><span>Difficulty with daily activities</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Caregiver burnout"><span>Caregiver burnout</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Social isolation"><span>Social isolation</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Physician recommendation"><span>Physician recommendation</span></label>
+          <label class="aopt"><input type="checkbox" name="a_reason[]" value="Planning ahead"><span>Planning ahead</span></label>
+        </div>
+      </div>
+      <div class="aform-nav">
+        <button class="abtn-back" onclick="aPrev()">← Back</button>
+        <button class="abtn-next" onclick="aNext()">Next: Care Needs →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: CARE NEEDS -->
+    <div class="asmnt-step" id="a-step-3">
+      <p class="asmnt-sec-tag">Section 3 of 7</p>
+      <h2 class="asmnt-sec-title">Care needs</h2>
+      <p class="asmnt-sec-sub">This section helps narrow down which level of community is the right fit.</p>
+
+      <div class="afield">
+        <label class="afield-label">Level of care needed <span class="req">*</span></label>
+        <div class="aopts">
+          <label class="aopt"><input type="radio" name="a_care_level" value="independent-living"><span>Independent Living</span></label>
+          <label class="aopt"><input type="radio" name="a_care_level" value="assisted-living"><span>Assisted Living</span></label>
+          <label class="aopt"><input type="radio" name="a_care_level" value="memory-care"><span>Memory Care</span></label>
+          <label class="aopt"><input type="radio" name="a_care_level" value="skilled-nursing"><span>Skilled Nursing</span></label>
+          <label class="aopt"><input type="radio" name="a_care_level" value="unsure"><span>Unsure — need guidance</span></label>
+        </div>
+      </div>
+      <div class="afield-row">
+        <div class="afield">
+          <label class="afield-label">Dementia / Alzheimer's diagnosis?</label>
+          <div class="aopts" style="grid-template-columns:1fr;">
+            <label class="aopt"><input type="radio" name="a_dementia" value="Yes"><span>Yes</span></label>
+            <label class="aopt"><input type="radio" name="a_dementia" value="No"><span>No</span></label>
+            <label class="aopt"><input type="radio" name="a_dementia" value="Unsure"><span>Unsure</span></label>
+          </div>
+        </div>
+        <div class="afield">
+          <label class="afield-label">Does the senior wander or become disoriented?</label>
+          <div class="aopts" style="grid-template-columns:1fr;">
+            <label class="aopt"><input type="radio" name="a_wandering" value="Frequently"><span>Frequently</span></label>
+            <label class="aopt"><input type="radio" name="a_wandering" value="Occasionally"><span>Occasionally</span></label>
+            <label class="aopt"><input type="radio" name="a_wandering" value="Rarely"><span>Rarely</span></label>
+            <label class="aopt"><input type="radio" name="a_wandering" value="Never"><span>Never</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label">Mobility status</label>
+        <div class="aopts">
+          <label class="aopt"><input type="radio" name="a_mobility" value="Fully independent"><span>Fully independent</span></label>
+          <label class="aopt"><input type="radio" name="a_mobility" value="Uses a cane"><span>Uses a cane</span></label>
+          <label class="aopt"><input type="radio" name="a_mobility" value="Uses a walker"><span>Uses a walker</span></label>
+          <label class="aopt"><input type="radio" name="a_mobility" value="Uses a wheelchair"><span>Uses a wheelchair</span></label>
+          <label class="aopt"><input type="radio" name="a_mobility" value="Needs transfer assistance"><span>Needs transfer assistance</span></label>
+          <label class="aopt"><input type="radio" name="a_mobility" value="Bedbound"><span>Bedbound</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label">Assistance needed with daily activities <em style="font-weight:300;color:var(--gray)">(select all that apply)</em></label>
+        <div class="aopts">
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Bathing"><span>Bathing</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Dressing"><span>Dressing</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Toileting"><span>Toileting</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Eating"><span>Eating</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Medication management"><span>Medication management</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Transfers"><span>Transfers</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Grooming"><span>Grooming</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="Incontinence care"><span>Incontinence care</span></label>
+          <label class="aopt"><input type="checkbox" name="a_adl[]" value="None currently"><span>None currently</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-conditions">Primary medical conditions or diagnoses</label>
+        <textarea id="a-conditions" name="conditions" placeholder="e.g., diabetes, COPD, Parkinson's..."></textarea>
+      </div>
+      <div class="aform-nav">
+        <button class="abtn-back" onclick="aPrev()">← Back</button>
+        <button class="abtn-next" onclick="aNext()">Next: Preferences →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: PREFERENCES & LIFESTYLE -->
+    <div class="asmnt-step" id="a-step-4">
+      <p class="asmnt-sec-tag">Section 4 of 7</p>
+      <h2 class="asmnt-sec-title">Preferences & lifestyle</h2>
+      <p class="asmnt-sec-sub">This is where we find the right fit — not just the right care level.</p>
+
+      <div class="afield" id="a-f-loc-wrap">
+        <label class="afield-label" for="a-pref-loc">Preferred city, area, or distance from family <span class="req">*</span></label>
+        <input type="text" id="a-pref-loc" name="preferred_location" placeholder="e.g., Redding, Chico, within 10 miles of Red Bluff">
+        <p class="aerr">Please enter a preferred location.</p>
+      </div>
+      <div class="afield">
+        <label class="afield-label">Preferred community type <em style="font-weight:300;color:var(--gray)">(select all that apply)</em></label>
+        <div class="aopts">
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="small"><span>Small residential care home</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="large"><span>Larger senior living community</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="faith-based"><span>Faith-based community</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="pet-friendly"><span>Pet-friendly</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="active-social"><span>Active / social environment</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="quiet"><span>Quiet environment</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="outdoor-space"><span>Outdoor space / gardens</span></label>
+          <label class="aopt"><input type="checkbox" name="a_comm_type[]" value="luxury"><span>Luxury community</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label">What matters most? <em style="font-weight:300;color:var(--gray)">(select all that apply)</em></label>
+        <div class="aopts">
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="safety"><span>Safety</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="quality-of-care"><span>Quality of care</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="cost"><span>Cost / affordability</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="location"><span>Location</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="activities"><span>Activities / social life</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="dining"><span>Dining quality</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="faith"><span>Faith / spiritual support</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="staff-responsiveness"><span>Staff responsiveness</span></label>
+          <label class="aopt"><input type="checkbox" name="a_priorities[]" value="memory-care-expertise"><span>Memory care expertise</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-lifestyle">Lifestyle, hobbies, routines, and values</label>
+        <textarea id="a-lifestyle" name="lifestyle" placeholder="e.g., loves gardening, attends church, had a dog named Biscuit, used to be a nurse..."></textarea>
+      </div>
+      <div class="aform-nav">
+        <button class="abtn-back" onclick="aPrev()">← Back</button>
+        <button class="abtn-next" onclick="aNext()">Next: Financial →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: FINANCIAL -->
+    <div class="asmnt-step" id="a-step-5">
+      <p class="asmnt-sec-tag">Section 5 of 7</p>
+      <h2 class="asmnt-sec-title">Financial considerations</h2>
+      <p class="asmnt-sec-sub">Budget helps us match you to communities that are genuinely sustainable.</p>
+
+      <div class="afield">
+        <label class="afield-label">Estimated monthly budget</label>
+        <div class="aopts">
+          <label class="aopt"><input type="radio" name="a_budget" value="under-3000"><span>Under $3,000 / mo</span></label>
+          <label class="aopt"><input type="radio" name="a_budget" value="3000-5000"><span>$3,000 – $5,000 / mo</span></label>
+          <label class="aopt"><input type="radio" name="a_budget" value="5000-7000"><span>$5,000 – $7,000 / mo</span></label>
+          <label class="aopt"><input type="radio" name="a_budget" value="7000-10000"><span>$7,000 – $10,000 / mo</span></label>
+          <label class="aopt"><input type="radio" name="a_budget" value="10000+"><span>$10,000+ / mo</span></label>
+          <label class="aopt"><input type="radio" name="a_budget" value="unsure"><span>Unsure</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label">How will care likely be funded? <em style="font-weight:300;color:var(--gray)">(select all that apply)</em></label>
+        <div class="aopts">
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="private-pay"><span>Private pay</span></label>
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="ltci"><span>Long-term care insurance</span></label>
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="va-benefits"><span>Veterans benefits</span></label>
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="medi-cal"><span>Medi-Cal / Medicaid</span></label>
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="sale-of-home"><span>Sale of home</span></label>
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="family-assistance"><span>Family assistance</span></label>
+          <label class="aopt"><input type="checkbox" name="a_funding[]" value="unsure"><span>Unsure</span></label>
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-fin-notes">Any financial concerns or limits we should know about?</label>
+        <textarea id="a-fin-notes" name="financial_notes" placeholder="e.g., 18 months of private pay, then will need Medi-Cal..."></textarea>
+      </div>
+      <div class="aform-nav">
+        <button class="abtn-back" onclick="aPrev()">← Back</button>
+        <button class="abtn-next" onclick="aNext()">Next: Timing →</button>
+      </div>
+    </div>
+
+    <!-- STEP 6: TIMING -->
+    <div class="asmnt-step" id="a-step-6">
+      <p class="asmnt-sec-tag">Section 6 of 7</p>
+      <h2 class="asmnt-sec-title">Timing & urgency</h2>
+      <p class="asmnt-sec-sub">Understanding your timeline helps us know how quickly to act on your behalf.</p>
+
+      <div class="afield">
+        <label class="afield-label">How soon is a move needed?</label>
+        <div class="aopts">
+          <label class="aopt"><input type="radio" name="a_timeline" value="Immediately"><span>Immediately</span></label>
+          <label class="aopt"><input type="radio" name="a_timeline" value="Within 7 days"><span>Within 7 days</span></label>
+          <label class="aopt"><input type="radio" name="a_timeline" value="Within 30 days"><span>Within 30 days</span></label>
+          <label class="aopt"><input type="radio" name="a_timeline" value="1–3 months"><span>1–3 months</span></label>
+          <label class="aopt"><input type="radio" name="a_timeline" value="3–6 months"><span>3–6 months</span></label>
+          <label class="aopt"><input type="radio" name="a_timeline" value="Planning ahead"><span>Planning ahead</span></label>
+        </div>
+      </div>
+      <div class="afield-row">
+        <div class="afield">
+          <label class="afield-label">Hospital or rehab discharge involved?</label>
+          <div class="aopts" style="grid-template-columns:1fr;">
+            <label class="aopt"><input type="radio" name="a_discharge" value="Yes"><span>Yes</span></label>
+            <label class="aopt"><input type="radio" name="a_discharge" value="No"><span>No</span></label>
+            <label class="aopt"><input type="radio" name="a_discharge" value="Unsure"><span>Unsure</span></label>
+          </div>
+        </div>
+        <div class="afield">
+          <label class="afield-label" for="a-discharge-date">Expected discharge date or deadline</label>
+          <input type="text" id="a-discharge-date" name="discharge_date" placeholder="e.g., July 15">
+        </div>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-toured-notes">Have you toured any communities? If so, what did you think?</label>
+        <textarea id="a-toured-notes" name="toured_notes" placeholder="e.g., visited Sunrise Manor but the rooms were too small..."></textarea>
+      </div>
+      <div class="aform-nav">
+        <button class="abtn-back" onclick="aPrev()">← Back</button>
+        <button class="abtn-next" onclick="aNext()">Next: Final Questions →</button>
+      </div>
+    </div>
+
+    <!-- STEP 7: DECISION SUPPORT -->
+    <div class="asmnt-step" id="a-step-7">
+      <p class="asmnt-sec-tag">Section 7 of 7</p>
+      <h2 class="asmnt-sec-title">Decision support</h2>
+      <p class="asmnt-sec-sub">Last section. These help us understand what a great outcome looks like for your family.</p>
+
+      <div class="afield">
+        <label class="afield-label" for="a-decision-makers">Who will be involved in making this decision?</label>
+        <input type="text" id="a-decision-makers" name="decision_makers" placeholder="e.g., myself and my two siblings">
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-concerns">What concerns you most about this decision?</label>
+        <textarea id="a-concerns" name="concerns" placeholder="e.g., cost, adjustment period, distance from family..."></textarea>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-right-fit">What would make a community feel like the right fit?</label>
+        <textarea id="a-right-fit" name="right_fit" placeholder="e.g., friendly staff, a garden she can walk in, church on Sundays..."></textarea>
+      </div>
+      <div class="afield">
+        <label class="afield-label" for="a-anything-else">Anything else we should know?</label>
+        <textarea id="a-anything-else" name="anything_else" placeholder="Anything at all — the more we know, the better we can help."></textarea>
+      </div>
+      <p class="adisclaimer">By submitting this assessment, you agree to share this information with North State Senior Solutions for the purpose of finding senior living options. This is not medical advice. Your information is kept private and never shared without your permission.</p>
+      <div class="aform-nav">
+        <button class="abtn-back" onclick="aPrev()">← Back</button>
+        <button class="abtn-submit" onclick="aHandleSubmit(event)">Find My Matches →</button>
+      </div>
+    </div>
+
+  </div><!-- /asmnt-wrap -->
+
+  <!-- LOADING -->
+  <div id="a-loading">
+    <div class="aspinner"></div>
+    <p style="font-family:var(--serif);font-size:1.35rem;font-weight:300;color:var(--gray);margin-bottom:.35rem;">Finding your best matches…</p>
+    <p style="font-size:.85rem;color:var(--gray-light);">Reviewing communities across the North State region.</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="a-results">
+    <div class="a-results-header">
+      <div class="a-success-banner">
+        <div class="a-success-ico"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div>
+          <h4 style="font-size:.95rem;font-weight:500;margin-bottom:.2rem;">Assessment received — we'll be in touch shortly.</h4>
+          <p style="font-size:.84rem;color:var(--gray);font-weight:300;">Your match results are below. We've also emailed these to you.</p>
+        </div>
+      </div>
+      <p style="font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);margin-bottom:.5rem;">Your Personalized Matches</p>
+      <h2 style="font-family:var(--serif);font-size:2rem;font-weight:300;letter-spacing:-.02em;margin-bottom:.6rem;" id="a-results-headline">Top Communities for Your Loved One</h2>
+      <p style="color:var(--gray);font-weight:300;font-size:.92rem;max-width:500px;margin:0 auto;" id="a-results-sub">Based on care level, budget, location, and lifestyle preferences.</p>
+    </div>
+    <div class="a-results-grid" id="a-results-grid"></div>
+    <div style="text-align:center;padding:0 2rem 5rem;">
+      <p style="color:var(--gray);font-size:.875rem;margin-bottom:1.1rem;font-weight:300;">Questions about your matches? We're here to help.</p>
+      <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <a href="mailto:northstateseniorsolutions@outlook.com" class="btn btn-primary">Email Us Directly →</a>
+        <button class="btn btn-outline" onclick="closeAssessment()">← Back to Site</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /assessment-overlay -->
+
+<script>
+/* ── EXISTING SITE JS ──────────────────────────── */
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+  setTimeout(()=>{
+    document.getElementById('form-view').style.display='block';
+    document.getElementById('success-view').style.display='none';
+  },300);
+}
+function overlayClick(e){}
+
+async function handleSubmit(e){
+  e.preventDefault();
+  const form=e.target;
+  const btn=form.querySelector('.modal-submit');
+  btn.textContent='Sending...';btn.disabled=true;
+  try{
+    const data=new FormData(form);
+    await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(data).toString()});
+    document.getElementById('form-view').style.display='none';
+    document.getElementById('success-view').style.display='block';
+  }catch(err){
+    btn.textContent='Get My Free Consultation →';btn.disabled=false;
+    alert('Something went wrong. Please email us at northstateseniorsolutions@outlook.com');
+  }
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeAssessment();}});
+
+// ── SCROLL ANIMATION ──────────────────────────────
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
+},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+// ── SMOOTH SCROLL (nav links only) ───────────────
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#')return;
+    try{
+      const t=document.querySelector(href);
+      if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+    }catch(err){}
+  });
+});
+
+// ── BUTTON WIRING ────────────────────────────────
+// Script is at bottom of page so DOM is already ready — no DOMContentLoaded needed
+['btn-assessment-hero','btn-assessment-cta'].forEach(function(id){
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();openAssessment();});
+});
+
+['btn-advisor-hero','btn-advisor-cta','btn-nav-search'].forEach(function(id){
+  const el=document.getElementById(id);
+  if(el) el.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();openModal();});
+});
+
+const modalOverlay=document.getElementById('modal');
+if(modalOverlay) modalOverlay.addEventListener('click',function(e){if(e.target===modalOverlay)closeModal();});
+
+/* ── ASSESSMENT OVERLAY JS ─────────────────────── */
+
+/* ════════════════════════════════════════════════
+   ★ EMAILJS SETUP
+   Sign up free at emailjs.com, connect Outlook,
+   create a template, then paste your credentials:
+   ════════════════════════════════════════════════ */
+const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';   // EmailJS Account → API Keys
+const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';   // EmailJS Email Services
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';  // EmailJS Email Templates
+
+/* ════════════════════════════════════════════════
+   ★ COMMUNITY DATASET — 44 Verified Communities
+   Redding · Anderson · Red Bluff · Chico · Oroville · Paradise
+   Last validated: May 2026
+   Verify "dataConfidence: low" entries at ccld.dss.ca.gov
+   before recommending to families.
+   ════════════════════════════════════════════════ */
+const COMMUNITIES=[
+
+  // ── REDDING / SHASTA COUNTY ─────────────────────────────────
+  {id:1,name:"Oakmont of Redding",city:"Redding",phone:"(530) 395-5900",website:"https://oakmontseniorliving.com/redding/",careTypes:["assisted-living","memory-care"],monthlyRateMin:4795,monthlyRateMax:7895,size:"large",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:true,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"455002743",capacity:140,description:"Oakmont is one of the newest and most upscale options in the Redding market with a large assisted living and memory care footprint. Best for families who want a polished environment with strong amenities. Pricing is toward the upper end of the local market.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:2,name:"Oakdale Heights of Redding",city:"Redding",phone:"(530) 241-6047",website:"https://oakdaleredding.com/",careTypes:["assisted-living"],monthlyRateMin:4295,monthlyRateMax:5495,size:"large",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002786",capacity:85,description:"A large assisted living building near Caldwell Park with a traditional apartment-style model and published pricing online. Practical fit for residents who want a larger peer group and predictable room-type pricing.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:3,name:"Hilltop Springs Senior Living",city:"Redding",phone:"(530) 395-1777",website:"https://mosaicms.com/community/hilltop-springs-senior-living/",careTypes:["independent-living","assisted-living","memory-care"],monthlyRateMin:5995,monthlyRateMax:null,size:"large",petFriendly:true,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:["swimming"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"455002932",capacity:211,description:"One of the few Redding campuses offering independent living, assisted living, and memory care together — ideal for couples wanting aging-in-place flexibility on a single campus. Pet friendly with pool access.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:4,name:"Sundial Assisted Living",city:"Redding",phone:"(530) 241-2900",website:"https://www.sundialalf.com/",careTypes:["assisted-living"],monthlyRateMin:3295,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:true,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002959",capacity:65,description:"Sundial positions itself as a higher-end assisted living option with a relatively accessible entry price for the market. Good fit for seniors wanting a sizeable community without memory care pricing tiers.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:5,name:"Willow Springs Memory Care",city:"Redding",phone:"(530) 242-0654",website:"https://willowspringsmemorycare.com/",careTypes:["memory-care"],monthlyRateMin:6000,monthlyRateMax:6500,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"455001248",capacity:56,description:"A dedicated dementia-care building — not a mixed campus with a memory wing. Best for families who prioritize a fully memory-focused environment and specialized cognitive care over independent-living amenities.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:6,name:"The Vistas Assisted Living & Memory Care",city:"Redding",phone:"(530) 222-8969",website:"https://vistasalf.com/",careTypes:["assisted-living","memory-care"],monthlyRateMin:5390,monthlyRateMax:6900,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"455002049",capacity:100,description:"A sizeable assisted living and memory care community with published rate bands and a conventional private-suite model. Works well for families wanting a professionally run community with onsite memory care.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:7,name:"Sierra Oaks Assisted Living and Memory Care",city:"Redding",phone:"(530) 241-5100",website:"https://sierraoaksredding.com/",careTypes:["assisted-living","memory-care"],monthlyRateMin:2894,monthlyRateMax:3995,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"455002787",capacity:113,description:"A substantial assisted living and memory care campus with pricing that starts lower than several premium Redding competitors. A solid middle-ground choice for families wanting a larger building with dementia support.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:8,name:"Golden Oaks Senior Living",city:"Redding",phone:"(530) 223-1538",website:null,careTypes:["assisted-living"],monthlyRateMin:4000,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002976",capacity:26,description:"A medium-sized licensed RCFE between a six-bed home and a large corporate campus in scale. Best for residents who want more oversight than independent living but a less institutional feel than the largest buildings.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:9,name:"New Vision Services Senior Living",city:"Redding",phone:"(530) 244-2522",website:null,careTypes:["assisted-living"],monthlyRateMin:3814,monthlyRateMax:4083,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002636",capacity:24,description:"A smaller licensed RCFE with pricing below many larger Redding campuses. A practical option for residents wanting a more contained setting at a modest entry point.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:10,name:"Serenity Gardens",city:"Redding",phone:"(530) 605-4033",website:null,careTypes:["assisted-living","memory-care"],monthlyRateMin:4000,monthlyRateMax:4900,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"455002550",capacity:30,description:"A mid-sized building in central Redding offering both assisted living and memory support. A sensible fit for families who want dementia-capable care in a smaller, easier-to-navigate setting.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:11,name:"Lavender Hills Assisted Living II",city:"Redding",phone:"(530) 247-0749",website:"https://www.lavenderhillsassistedliving.com/",careTypes:["assisted-living"],monthlyRateMin:4000,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:true,outdoorSpace:false,quiet:true,luxury:false,activities:["religious-services"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002027",capacity:25,description:"Part of a long-running local operator with a personal, residential feel. A Christian-oriented smaller community — good for families prioritizing faith-based care in a quieter environment.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:12,name:"Lavender Hills Assisted Living III",city:"Redding",phone:"(530) 245-9970",website:"https://www.lavenderhillsassistedliving.com/",careTypes:["assisted-living"],monthlyRateMin:5250,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:true,outdoorSpace:false,quiet:true,luxury:false,activities:["religious-services"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002615",capacity:29,description:"The larger sister building next door — serves residents wanting a smaller-scale faith-oriented assisted living model. Best for families prioritizing Christian values and a quieter setting over campus-level amenities.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:13,name:"Saint Lorenz Assisted Living",city:"Redding",phone:"(530) 244-1913",website:"https://saintlorenz.com/",careTypes:["assisted-living"],monthlyRateMin:6500,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"455002764",capacity:17,description:"A smaller licensed building in Redding suited to families wanting more structure than a private home but less scale than a large campus. Pricing is relatively high for its size — worth comparing carefully against local competitors.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:14,name:"Bonhurst Assisted Living I",city:"Redding",phone:"(530) 244-8458",website:null,careTypes:["assisted-living","board-and-care"],monthlyRateMin:null,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:6,description:"A classic six-bed board-and-care residence — not a campus community. Best for families who want a quiet home setting with close caregiver oversight. Verify current licensing directly before recommending.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  // ── ANDERSON (near Redding) ──────────────────────────────────
+  {id:15,name:"Acting With Love Assisted Living",city:"Anderson",phone:"(530) 941-1473",website:null,careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:12,description:"A small Anderson-area care home suited for residents who thrive in a close-knit residential setting. Approximately 10 miles south of Redding. Verify current licensing before recommending.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:16,name:"Cozy Manor",city:"Anderson",phone:"(530) 917-2541",website:null,careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:6,description:"A true small-home option in Anderson for families who prefer a residential neighborhood and low resident count. Best for someone valuing familiarity and a quieter pace over extensive communal programming.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  // ── RED BLUFF / TEHAMA COUNTY ────────────────────────────────
+  {id:17,name:"Lassen House Senior Living",city:"Red Bluff",phone:"(530) 529-2900",website:"https://www.compass-living.com/senior-living/ca/red-bluff/lassen-house/",careTypes:["assisted-living","memory-care"],monthlyRateMin:4395,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"525002755",capacity:86,description:"The most full-featured large senior living option in Red Bluff, with both assisted living and memory care. A logical choice for Tehama County families who want a campus environment without relocating to Redding.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:18,name:"By the River Assisted Living",city:"Red Bluff",phone:"(530) 727-9010",website:"https://www.bytheriverliving.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:6,description:"A small Red Bluff home-style setting with a direct local website. Best for residents who need hands-on daily support but would feel overwhelmed in a larger building.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:19,name:"All About Seniors",city:"Red Bluff",phone:"(530) 529-4595",website:null,careTypes:["assisted-living","board-and-care"],monthlyRateMin:null,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"525002150",capacity:15,description:"A smaller Red Bluff RCFE suited to residents who need support in a simple, lower-scale environment. Best for families prioritizing Red Bluff proximity over broad amenity packages.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:20,name:"Gilmore Place",city:"Red Bluff",phone:"(530) 727-9293",website:null,careTypes:["assisted-living"],monthlyRateMin:3400,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:22,description:"Fills the middle ground in Red Bluff between a six-bed home and a large campus. Better for residents wanting some community scale without the largest local building.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  // ── CHICO / BUTTE COUNTY ─────────────────────────────────────
+  {id:21,name:"Westmont of Chico",city:"Chico",phone:"(530) 535-7337",website:"https://westmontliving.com/our-communities/california/chico/westmont-of-chico/",careTypes:["independent-living","assisted-living","memory-care"],monthlyRateMin:3440,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:["outings"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:null,capacity:null,description:"One of the most complete aging-in-place campuses in the area, combining independent living, assisted living, and memory care. Especially attractive for families trying to avoid another move as care needs change.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:22,name:"Westmont of Chico — The Inn",city:"Chico",phone:"(530) 535-7337",website:"https://westmontliving.com/our-communities/california/chico/westmont-of-chico/",careTypes:["assisted-living"],monthlyRateMin:4940,monthlyRateMax:7040,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045002620",capacity:20,description:"The licensed assisted living piece of the larger Westmont campus. Strong fit for residents who want apartment-style assisted living connected to broader campus infrastructure.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:23,name:"Provincial Chico",city:"Chico",phone:"(530) 343-6251",website:"https://provincialchico.com/",careTypes:["independent-living"],monthlyRateMin:2322,monthlyRateMax:2530,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:null,description:"A budget-friendlier independent living option in Chico. Best for seniors who are largely independent and want social housing and amenities rather than licensed daily-care support.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:24,name:"Sycamore Glen",city:"Chico",phone:"(530) 343-8282",website:"https://sycamoreglen.com/",careTypes:["independent-living"],monthlyRateMin:2650,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:null,description:"A long-established active senior independent living property emphasizing hospitality and security. Good for mobile older adults who don't yet need ADL support but want a maintenance-free lifestyle.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:25,name:"Amber Grove Place",city:"Chico",phone:"(530) 826-3226",website:"https://ambergroveplace.com/",careTypes:["memory-care"],monthlyRateMin:3520,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"045002441",capacity:70,description:"A dedicated memory care building — not a general assisted living community with a few dementia units. A strong candidate for families seeking a larger specialized dementia program in Chico.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:26,name:"Marbella Chico",city:"Chico",phone:"(530) 899-0814",website:"https://marbellachico.com/",careTypes:["assisted-living","memory-care"],monthlyRateMin:4788,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:null,capacity:56,description:"A long-established assisted living and memory care option in Chico with a polished website and broad market visibility. Best for families wanting a mainstream private-pay campus with dementia support.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:27,name:"The Lighthouse at Chico",city:"Chico",phone:"(530) 566-1800",website:"https://lighthouseatchico.com/",careTypes:["assisted-living","memory-care"],monthlyRateMin:3520,monthlyRateMax:4600,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:["arts-crafts","music","religious-services"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"045920283",capacity:120,description:"One of the largest Chico-area assisted living and memory care communities. Good fit for families seeking scale, programming breadth, and onsite memory care under one roof.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:28,name:"The Courtyard at Little Chico Creek",city:"Chico",phone:"(530) 342-0707",website:"https://www.courtyardinchico.com/",careTypes:["assisted-living"],monthlyRateMin:null,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:["movie-nights"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045000700",capacity:49,description:"A mid-sized Chico assisted living community with a clean state-license trail and direct website. Well suited to residents who want a conventional assisted living environment that is neither tiny nor extremely large.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:29,name:"Roseleaf Gardens",city:"Chico",phone:"(530) 924-5531",website:"https://roseleafcare.com/locations/roseleaf-garden/",careTypes:["assisted-living","memory-care"],monthlyRateMin:3390,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:false,luxury:false,activities:["exercise-classes","bingo","movie-nights"],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"045002775",capacity:88,description:"One of the more dementia-forward operators in Chico, describing memory care, respite, hospice, and palliative support. Strong match for families wanting a specialized care philosophy rather than a purely hospitality-first campus.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:30,name:"Roseleaf Senior Care",city:"Chico",phone:"(530) 924-4804",website:"https://roseleafcare.com/locations/roseleaf-senior-care/",careTypes:["assisted-living","memory-care"],monthlyRateMin:3390,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"045002778",capacity:null,description:"The second Chico Roseleaf campus, marketed around memory-related supportive care. Should be on most short lists for families specifically shopping Chico dementia care.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:31,name:"Townsend House",city:"Chico",phone:"(530) 342-4455",website:"http://www.thassisted.com",careTypes:["assisted-living"],monthlyRateMin:3750,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045002696",capacity:38,description:"A straightforward mid-sized assisted living community with strong state-line verification and a modest entry rate. Practical fit for families who want community living in Chico without paying for a premium brand name.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:32,name:"Roses and Ivy Elder Care",city:"Chico",phone:"(530) 894-7836",website:"http://www.rosesandivy.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"medium",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045001382",capacity:20,description:"Sits between board-and-care and larger-campus models in scale and cost. Useful for families wanting Chico proper at a modest price point, though breadth of amenities is more limited than the largest local campuses.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:33,name:"Carmel House",city:"Chico",phone:"(530) 342-0888",website:"https://carmelhouseassistedliving.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045002811",capacity:null,description:"A very small-home alternative in Chico — better compared against other board-and-care homes than large campuses. Works best for residents needing personalized oversight in a low-stimulation environment.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:34,name:"Foothill Cottage",city:"Chico",phone:"(530) 898-0786",website:"https://foothillcottage.net/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:null,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045002891",capacity:6,description:"One of the more clearly verifiable small Chico homes — present in both county resources and the state facility index. Fits a resident who needs daily living help but would thrive better in a real house than a large communal building.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:35,name:"Almond Blossom Assisted Living — West",city:"Chico",phone:"(530) 342-1813",website:"https://www.chicoassistedliving.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045920043",capacity:6,description:"One of three small Chico homes under the same operator. Verified on both the company site and state search. Best for families who want a small-home format with an operator managing multiple local residences.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:36,name:"Almond Blossom Assisted Living — BH 1",city:"Chico",phone:"(530) 809-2408",website:"https://www.chicoassistedliving.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3500,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045920042",capacity:6,description:"Another six-bed Almond Blossom home with current licensing. Good fit for someone who needs a quieter, residential-scale setting instead of a larger assisted living building.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:37,name:"Almond Blossom Assisted Living — BH 2",city:"Chico",phone:"(530) 809-2824",website:"https://www.chicoassistedliving.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045920050",capacity:6,description:"The third active Almond Blossom location. Gives families already interested in the operator another small-home option in east Chico.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  // ── OROVILLE / BUTTE COUNTY ──────────────────────────────────
+  {id:38,name:"Marbella Oroville",city:"Oroville",phone:"(530) 533-5000",website:"https://marbellaoroville.com/",careTypes:["assisted-living","memory-care"],monthlyRateMin:5010,monthlyRateMax:null,size:"large",petFriendly:true,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"045000603",capacity:88,description:"One of the strongest verified Oroville options, offering both assisted living and memory care with a traditional campus model. A sensible Butte County alternative for families who don't want to limit their search to Chico proper.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:39,name:"Country Crest Senior Living",city:"Oroville",phone:"(530) 453-6818",website:"https://countrycrestseniorliving.com/",careTypes:["independent-living","assisted-living","memory-care"],monthlyRateMin:2445,monthlyRateMax:null,size:"large",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:false,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:true,behavioralSupport:true,licenseNumber:"045002440",capacity:150,description:"One of the broadest service-line communities in Oroville, with independent living, assisted living, and memory care. Published entry price is unusually low for a large campus — confirm which care level that rate applies to.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:40,name:"Angel Lite Elder Care",city:"Oroville",phone:"(530) 589-9963",website:"https://angelliteeldercare.com/",careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:6,description:"A small Oroville home-style setting with a direct website. Best for families comfortable verifying licensing manually, who want intimate care in a residential neighborhood.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  {id:41,name:"Daniela's Country Home Care",city:"Oroville",phone:"(530) 532-1577",website:null,careTypes:["assisted-living","board-and-care"],monthlyRateMin:3400,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:true,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:6,description:"A small Oroville residential care home appearing in county resource material and online directories. Best suited for residents needing daily support in a lower-key residential environment.",lastVerified:"2026-05",dataConfidence:"low"},
+
+  // ── PARADISE / BUTTE COUNTY ──────────────────────────────────
+  {id:42,name:"Sunshine Assisted Living — The House",city:"Paradise",phone:"(530) 877-9500",website:"https://www.ciminocare.com/sunshine-assisted-living/",careTypes:["assisted-living"],monthlyRateMin:3500,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045003002",capacity:15,description:"One of Paradise's more verifiable post-Camp-Fire assisted living options, backed by a recognizable regional operator. Best for families who want Paradise-area geography and a smaller licensed building.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:43,name:"Sunshine Assisted Living — The Cottage",city:"Paradise",phone:"(530) 877-3363",website:"https://www.ciminocare.com/sunshine-assisted-living/",careTypes:["assisted-living"],monthlyRateMin:3500,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:"045003003",capacity:17,description:"Sister building to Sunshine's House, giving Paradise a second small licensed assisted living option under the same operator. Attractive for residents who want a small-home feel with an operator that has website transparency.",lastVerified:"2026-05",dataConfidence:"high"},
+
+  {id:44,name:"Mountain Meadow Lodge",city:"Paradise",phone:"(530) 872-9002",website:null,careTypes:["assisted-living"],monthlyRateMin:null,monthlyRateMax:null,size:"small",petFriendly:false,faithBased:false,outdoorSpace:false,quiet:true,luxury:false,activities:[],acceptsMediCal:false,acceptsLTCI:false,acceptsVA:false,acceptsPrivatePay:true,memoryCareExpertise:false,behavioralSupport:false,licenseNumber:null,capacity:17,description:"A Paradise assisted living option appearing in county resource material. Treat as likely operational but verify current license and status at ccld.dss.ca.gov before recommending to families.",lastVerified:"2026-05",dataConfidence:"low"}
+
+];
+
+/* ── STEP NAVIGATION ─────────────────────────── */
+const A_STEPS=7;
+const A_LABELS=["Who Is Searching?","About the Senior","Care Needs","Preferences & Lifestyle","Financial","Timing & Urgency","Final Questions"];
+let aCurrent=1;
+
+function openAssessment(){
+  aCurrent=1;
+  document.getElementById('assessment-overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('a-form-wrap').style.display='block';
+  document.getElementById('a-progress-wrap').style.display='block';
+  document.getElementById('a-loading').style.display='none';
+  document.getElementById('a-results').style.display='none';
+  aInitDots();
+  aShowStep(1);
+}
+function closeAssessment(){
+  document.getElementById('assessment-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function aInitDots(){
+  const c=document.getElementById('a-dots');
+  c.innerHTML='';
+  for(let i=1;i<=A_STEPS;i++){
+    const d=document.createElement('div');
+    d.className='asmnt-dot'+(i===1?' active':'');
+    d.id=`a-dot-${i}`;
+    c.appendChild(d);
+  }
+}
+
+function aUpdateProgress(){
+  const pct=Math.round((aCurrent/A_STEPS)*100);
+  document.getElementById('a-bar-fill').style.width=pct+'%';
+  document.getElementById('a-progress-label').textContent=`Section ${aCurrent} of ${A_STEPS} — ${A_LABELS[aCurrent-1]}`;
+  document.getElementById('a-step-counter').textContent=`${aCurrent} / ${A_STEPS}`;
+  for(let i=1;i<=A_STEPS;i++){
+    const d=document.getElementById(`a-dot-${i}`);
+    if(d) d.className='asmnt-dot'+(i<aCurrent?' done':i===aCurrent?' active':'');
+  }
+}
+
+function aShowStep(n){
+  document.querySelectorAll('.asmnt-step').forEach(s=>s.classList.remove('active'));
+  const step=document.getElementById(`a-step-${n}`);
+  if(step) step.classList.add('active');
+  document.getElementById('assessment-overlay').scrollTo({top:0,behavior:'smooth'});
+  aUpdateProgress();
+}
+
+function aNext(){if(!aValidate(aCurrent))return;if(aCurrent<A_STEPS){aCurrent++;aShowStep(aCurrent);}}
+function aPrev(){if(aCurrent>1){aCurrent--;aShowStep(aCurrent);}}
+
+/* ── VALIDATION ─────────────────────────────── */
+function aValidate(n){
+  let ok=true;
+  if(n===1){
+    const name=document.getElementById('a-name');
+    const phone=document.getElementById('a-phone');
+    const email=document.getElementById('a-email');
+    if(!name.value.trim()){name.closest('.afield').classList.add('error');ok=false;}else name.closest('.afield').classList.remove('error');
+    if(!phone.value.trim()){phone.closest('.afield').classList.add('error');ok=false;}else phone.closest('.afield').classList.remove('error');
+    if(!email.value.trim()||!email.value.includes('@')){email.closest('.afield').classList.add('error');ok=false;}else email.closest('.afield').classList.remove('error');
+  }
+  if(n===4){
+    const loc=document.getElementById('a-pref-loc');
+    if(!loc.value.trim()){loc.closest('.afield').classList.add('error');ok=false;}else loc.closest('.afield').classList.remove('error');
+  }
+  if(!ok){
+    const first=document.querySelector(`#a-step-${n} .afield.error`);
+    if(first) document.getElementById('assessment-overlay').scrollTo({top:first.offsetTop-100,behavior:'smooth'});
+  }
+  return ok;
+}
+
+/* ── COLLECT FORM DATA ─────────────────────── */
+function aGetData(){
+  const get=name=>{const el=document.querySelector(`[name="${name}"]:checked`);return el?el.value:'';};
+  const getAll=name=>[...document.querySelectorAll(`[name="${name}"]:checked`)].map(e=>e.value);
+  return{
+    name:document.getElementById('a-name')?.value||'',
+    phone:document.getElementById('a-phone')?.value||'',
+    email:document.getElementById('a-email')?.value||'',
+    who:get('a_who'),contact_method:get('a_contact_method'),contact_time:get('a_contact_time'),
+    senior_name:document.getElementById('a-senior-name')?.value||'',
+    senior_age:get('a_age'),living:get('a_living'),
+    senior_location:document.getElementById('a-senior-loc')?.value||'',
+    reasons:getAll('a_reason[]'),
+    care_level:get('a_care_level'),dementia:get('a_dementia'),wandering:get('a_wandering'),
+    mobility:get('a_mobility'),adl:getAll('a_adl[]'),
+    conditions:document.getElementById('a-conditions')?.value||'',
+    preferred_location:document.getElementById('a-pref-loc')?.value||'',
+    community_type:getAll('a_comm_type[]'),priorities:getAll('a_priorities[]'),
+    lifestyle:document.getElementById('a-lifestyle')?.value||'',
+    budget:get('a_budget'),funding:getAll('a_funding[]'),
+    financial_notes:document.getElementById('a-fin-notes')?.value||'',
+    timeline:get('a_timeline'),discharge:get('a_discharge'),
+    discharge_date:document.getElementById('a-discharge-date')?.value||'',
+    toured_notes:document.getElementById('a-toured-notes')?.value||'',
+    decision_makers:document.getElementById('a-decision-makers')?.value||'',
+    concerns:document.getElementById('a-concerns')?.value||'',
+    right_fit:document.getElementById('a-right-fit')?.value||'',
+    anything_else:document.getElementById('a-anything-else')?.value||''
+  };
+}
+
+/* ── SCORING ALGORITHM ─────────────────────── */
+function aBudgetMax(b){return{'under-3000':3000,'3000-5000':5000,'5000-7000':7000,'7000-10000':10000,'10000+':99999,'unsure':99999}[b]||99999;}
+function aBudgetMin(b){return{'under-3000':0,'3000-5000':3000,'5000-7000':5000,'7000-10000':7000,'10000+':10000,'unsure':0}[b]||0;}
+
+function aScore(data,c){
+  let score=0,factors=[];
+  // Care level (35pts)
+  const needed=data.care_level;
+  if(!needed||needed==='unsure'){score+=20;factors.push({label:'Care level to be confirmed',yes:true});}
+  else if(c.careTypes.includes(needed)){score+=35;factors.push({label:'Care level match',yes:true});}
+  else{factors.push({label:'Care level mismatch',yes:false});}
+  // Budget (25pts)
+  const bMin=aBudgetMin(data.budget),bMax=aBudgetMax(data.budget);
+  if(data.budget==='unsure'){score+=15;factors.push({label:'Budget to be confirmed',yes:true});}
+  else if(c.monthlyRateMin<=bMax&&c.monthlyRateMax>=bMin){score+=25;factors.push({label:'Within budget range',yes:true});}
+  else if(c.monthlyRateMin<=bMax+800){score+=8;factors.push({label:'Slightly over budget',yes:false});}
+  else{factors.push({label:'Over budget',yes:false});}
+  // Location (20pts) — matches city name OR nearby cities
+  const prefLoc=(data.preferred_location||'').toLowerCase().trim();
+  const city=c.city.toLowerCase();
+  // Build list of terms to match against
+  const nearbyMap = {
+    'anderson': ['anderson','redding'],
+    'red bluff': ['red bluff','redding'],
+    'oroville': ['oroville','chico'],
+    'paradise': ['paradise','chico']
+  };
+  let locationScore = 4; // default: different area
+  if(prefLoc){
+    // Exact city match
+    if(prefLoc.includes(city)||city.includes(prefLoc.split(',')[0].trim())){
+      locationScore=20;
+      factors.push({label:`Located in ${c.city}`,yes:true});
+    } else {
+      // Check nearby city relationships
+      let nearbyMatch = false;
+      for(const [nearby, majors] of Object.entries(nearbyMap)){
+        if((prefLoc.includes(nearby)||city===nearby) && majors.some(m=>prefLoc.includes(m)||city===m)){
+          nearbyMatch=true; break;
+        }
+      }
+      locationScore = nearbyMatch ? 12 : 4;
+      factors.push({label:`Located in ${c.city}`,yes:nearbyMatch});
+    }
+  } else {
+    locationScore=10;
+    factors.push({label:`Located in ${c.city}`,yes:true});
+  }
+  score+=locationScore;
+  // Community type preferences (12pts)
+  const prefs=data.community_type||[];
+  let tp=0;
+  if(prefs.includes('small')&&c.size==='small')tp+=3;
+  if(prefs.includes('large')&&c.size==='large')tp+=3;
+  if(prefs.includes('pet-friendly')&&c.petFriendly){tp+=3;factors.push({label:'Pet-friendly',yes:true});}
+  if(prefs.includes('faith-based')&&c.faithBased){tp+=3;factors.push({label:'Faith-based community',yes:true});}
+  if(prefs.includes('outdoor-space')&&c.outdoorSpace){tp+=2;factors.push({label:'Outdoor space & gardens',yes:true});}
+  if(prefs.includes('quiet')&&c.quiet){tp+=2;factors.push({label:'Quiet environment',yes:true});}
+  score+=Math.min(12,tp);
+  // Priorities (8pts)
+  const pri=data.priorities||[];
+  let pp=0;
+  if(pri.includes('memory-care-expertise')&&c.memoryCareExpertise)pp+=4;
+  if(pri.includes('faith')&&c.faithBased)pp+=2;
+  if(pri.includes('activities')&&c.activities.length>5)pp+=2;
+  score+=Math.min(8,pp);
+  // Funding bonus factors
+  const fund=data.funding||[];
+  if(fund.includes('medi-cal')&&c.acceptsMediCal)factors.push({label:'Accepts Medi-Cal',yes:true});
+  if(fund.includes('va-benefits')&&c.acceptsVA)factors.push({label:'Accepts VA benefits',yes:true});
+  if(fund.includes('ltci')&&c.acceptsLTCI)factors.push({label:'Accepts LTC insurance',yes:true});
+  // Memory care adjustment
+  if(data.dementia==='Yes'||data.wandering==='Frequently'||data.wandering==='Occasionally'){
+    if(c.memoryCareExpertise){score+=5;factors.push({label:'Memory care expertise',yes:true});}
+    if(!c.careTypes.includes('memory-care'))score-=15;
+  }
+  return{community:c,score:Math.max(0,Math.min(100,score)),factors:factors.slice(0,5)};
+}
+
+function aRankMatches(data){
+  return COMMUNITIES.map(c=>aScore(data,c)).sort((a,b)=>b.score-a.score).slice(0,5);
+}
+
+/* ── RENDER RESULTS ─────────────────────────── */
+function aRenderResults(matches,data){
+  const grid=document.getElementById('a-results-grid');
+  const seniorName=data.senior_name||'your loved one';
+  document.getElementById('a-results-headline').textContent=`Top Communities for ${seniorName}`;
+  document.getElementById('a-results-sub').textContent=
+    `Matched on ${data.care_level&&data.care_level!=='unsure'?data.care_level.replace(/-/g,' '):'care needs'}, budget, location, and lifestyle preferences.`;
+  grid.innerHTML='';
+  matches.forEach((m,i)=>{
+    const c=m.community,pct=m.score,isHigh=pct>=70;
+    const card=document.createElement('div');
+    card.className='amatch-card';
+    card.innerHTML=`
+      <div class="amatch-top">
+        <div><p class="amatch-name">${i===0?'⭐ ':''}${c.name}</p><p class="amatch-city">📍 ${c.city}, CA</p></div>
+        <div><p class="ascore-pct ${isHigh?'':'med'}">${pct}%</p><p class="ascore-label">Match Score</p></div>
+      </div>
+      <div class="amatch-bar-wrap"><div class="amatch-bar-bg"><div class="amatch-bar-fill ${isHigh?'abar-green':'abar-terra'}" style="width:0%" data-w="${pct}%"></div></div></div>
+      <div class="amatch-body">
+        <div class="amatch-detail"><h4>Care Offered</h4><p>${c.careTypes.map(t=>t.replace(/-/g,' ').replace(/\b\w/g,l=>l.toUpperCase())).join(', ')}</p></div>
+        <div class="amatch-detail"><h4>About This Community</h4><p>${c.description}</p></div>
+      </div>
+      <div class="amatch-factors">${m.factors.map(f=>`<span class="afactor ${f.yes?'yes':'no'}">${f.yes?'✓':'✗'} ${f.label}</span>`).join('')}</div>
+      <div class="amatch-footer">
+        <span class="amatch-rate">Est. rate: <strong>$${c.monthlyRateMin.toLocaleString()} – $${c.monthlyRateMax.toLocaleString()} / mo</strong></span>
+        ${c.phone?`<a href="tel:${c.phone}" class="btn btn-outline" style="font-size:.78rem;padding:.38rem .9rem;">${c.phone}</a>`:''}
+      </div>`;
+    grid.appendChild(card);
+  });
+  setTimeout(()=>document.querySelectorAll('.amatch-bar-fill').forEach(b=>b.style.width=b.dataset.w),150);
+}
+
+/* ── EMAIL RESULTS ──────────────────────────── */
+async function aSendEmail(data,matches){
+  if(EMAILJS_PUBLIC_KEY==='YOUR_PUBLIC_KEY')return;
+  try{
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+    const body=matches.map((m,i)=>{
+      const c=m.community;
+      return`${i+1}. ${c.name} — ${m.score}% Match\n   Location: ${c.city}, CA\n   Rate: $${c.monthlyRateMin.toLocaleString()} – $${c.monthlyRateMax.toLocaleString()}/mo\n   Phone: ${c.phone}\n   ${c.description}\n`;
+    }).join('\n');
+    await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
+      to_name:data.name,to_email:data.email,
+      senior_name:data.senior_name||'your loved one',match_results:body
+    });
+  }catch(e){console.warn('EmailJS:',e);}
+}
+
+/* ── NETLIFY SUBMIT ──────────────────────────── */
+async function aSubmitNetlify(data){
+  const b=new URLSearchParams();
+  b.append('form-name','care-assessment');
+  ['name','email','phone','care_level','preferred_location','budget','timeline','senior_name','senior_age','mobility'].forEach(k=>b.append(k,data[k]||''));
+  b.append('community_preferences',(data.community_type||[]).join(', '));
+  b.append('funding',(data.funding||[]).join(', '));
+  b.append('lifestyle',data.lifestyle||'');
+  b.append('concerns',data.concerns||'');
+  try{await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:b.toString()});}
+  catch(e){console.warn('Netlify form:',e);}
+}
+
+/* ── MAIN SUBMIT HANDLER ────────────────────── */
+async function aHandleSubmit(e){
+  e.preventDefault();
+  if(!aValidate(7))return;
+  const data=aGetData();
+  document.getElementById('a-form-wrap').style.display='none';
+  document.getElementById('a-progress-wrap').style.display='none';
+  document.getElementById('a-loading').style.display='block';
+  document.getElementById('assessment-overlay').scrollTo({top:0,behavior:'smooth'});
+  const matches=aRankMatches(data);
+  await Promise.all([aSubmitNetlify(data),aSendEmail(data,matches)]);
+  document.getElementById('a-loading').style.display='none';
+  document.getElementById('a-results').style.display='block';
+  aRenderResults(matches,data);
+  document.getElementById('assessment-overlay').scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── OPTION HIGHLIGHT ───────────────────────── */
+document.addEventListener('change',e=>{
+  if(e.target.type==='radio'){
+    const name=e.target.name;
+    document.querySelectorAll(`[name="${name}"]`).forEach(r=>r.closest('.aopt')?.classList.remove('sel'));
+    e.target.closest('.aopt')?.classList.add('sel');
+  }
+  if(e.target.type==='checkbox'){
+    e.target.closest('.aopt')?.classList.toggle('sel',e.target.checked);
+  }
+});
+</script>
+</body>
+</html>
