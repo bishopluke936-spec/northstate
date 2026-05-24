@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog | North State Senior Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1E3D2F;--green-mid:#2D5443;--green-pale:#E4EDE7;--terra:#B8972A;--terra-light:#CDB054;--cream:#F8F5F0;--cream-dark:#EDE8DF;--charcoal:#1A1A1A;--gray:#6B6460;--gray-light:#A8A49E;--white:#FFFFFF;--border:rgba(26,26,26,0.10);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--r:6px;--r-lg:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:200;background:rgba(248,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.logo-mark img{width:40px;height:40px;object-fit:contain;}
+.logo-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--green);letter-spacing:.04em;line-height:1.15;}
+.logo-sub{display:block;font-size:.6rem;font-weight:400;color:var(--terra);letter-spacing:.18em;text-transform:uppercase;}
+.btn{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:100px;font-family:var(--sans);font-size:.8125rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all .2s;border:1.5px solid transparent;}
+.btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
+.btn-outline:hover{background:var(--green-pale);}
+.btn-terra{background:var(--terra);color:#fff;border-color:var(--terra);}
+.btn-terra:hover{background:var(--terra-light);}
+.page-hero{background:var(--green);padding:5rem 2rem 4rem;}
+.page-hero-in{max-width:820px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .875rem;background:rgba(255,255,255,.12);border-radius:100px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:1.25rem;letter-spacing:.06em;}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:300;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:1rem;}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:560px;line-height:1.7;font-weight:300;}
+.page-body{max-width:820px;margin:0 auto;padding:4rem 2rem 6rem;}
+h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin:3rem 0 .875rem;}
+h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin:1.5rem 0 .5rem;}
+p{color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem;font-size:.975rem;}
+ul,ol{color:var(--gray);line-height:1.8;font-weight:300;margin:0 0 1.25rem 1.5rem;font-size:.975rem;}
+li{margin-bottom:.4rem;}
+strong{color:var(--charcoal);font-weight:500;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.divider{height:1px;background:var(--border);margin:2.5rem 0;}
+.highlight-box{background:var(--green-pale);border-left:3px solid var(--green);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.highlight-box p{color:var(--charcoal);font-weight:400;margin:0;}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.75rem 0;}
+.card{background:var(--white);padding:1.75rem;}
+.card h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--charcoal);margin-bottom:.5rem;}
+.card p{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300;margin:0;}
+.checklist{list-style:none;margin-left:0;}
+.checklist li{padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:'☐';font-size:1.1rem;color:var(--green);flex-shrink:0;margin-top:1px;}
+.cta-band{background:var(--green);border-radius:var(--r-lg);padding:2.5rem;margin-top:3rem;text-align:center;}
+.cta-band h3{font-family:var(--serif);font-size:1.75rem;font-weight:300;color:#fff;margin-bottom:.5rem;}
+.cta-band p{color:rgba(255,255,255,.7);font-weight:300;margin-bottom:1.5rem;font-size:.95rem;}
+footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;background:var(--cream);}
+.footer-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;}
+.footer-brand p{font-size:.84rem;color:var(--gray);line-height:1.7;margin-top:.75rem;font-weight:300;max-width:270px;}
+.footer-col h4{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.875rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.footer-col a{text-decoration:none;font-size:.875rem;color:var(--gray);transition:color .2s;font-weight:300;}
+.footer-col a:hover{color:var(--charcoal);}
+.footer-bot{max-width:1120px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--gray-light);}
+.footer-bot a{color:var(--gray-light);text-decoration:none;}
+@media(max-width:680px){.card-grid{grid-template-columns:1fr;}.footer-in{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-in{grid-template-columns:1fr;}}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.75rem 0;}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.75rem;}
+.contact-card h4{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--green);margin-bottom:.5rem;}
+.contact-card p{font-size:.9rem;color:var(--gray);line-height:1.65;font-weight:300;margin:0 0 .5rem;}
+.contact-card a{font-size:.9rem;color:var(--green);font-weight:500;}
+.blog-grid{display:flex;flex-direction:column;gap:1.5rem;margin:1.75rem 0;}
+.blog-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.75rem;}
+.blog-card .tag{display:inline-block;padding:.2rem .7rem;border-radius:100px;font-size:.72rem;font-weight:500;background:var(--green-pale);color:var(--green);margin-bottom:.75rem;}
+.blog-card h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:.5rem;}
+.blog-card p{font-size:.9rem;color:var(--gray);line-height:1.65;font-weight:300;margin:0;}
+.blog-card .date{font-size:.78rem;color:var(--gray-light);margin-top:.625rem;}
+.team-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start;margin:1.75rem 0;}
+.team-avatar{width:80px;height:80px;border-radius:50%;background:var(--green);color:#fff;font-family:var(--serif);font-size:2rem;font-weight:300;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.team-info h4{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin-bottom:.25rem;}
+.team-info .role{font-size:.8rem;color:var(--terra);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.625rem;}
+.team-info p{font-size:.9rem;color:var(--gray);line-height:1.7;font-weight:300;margin:0;}
+.form-wrap{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:2rem;margin:1.75rem 0;}
+.fg{margin-bottom:1rem;}
+.fg label{display:block;font-size:.8rem;font-weight:500;margin-bottom:.35rem;color:var(--charcoal);}
+.fg input,.fg select,.fg textarea{width:100%;padding:.7rem 1rem;border:1.5px solid var(--border);border-radius:var(--r);font-family:var(--sans);font-size:.9rem;color:var(--charcoal);background:var(--cream);outline:none;transition:border-color .2s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--green);background:var(--white);}
+.fg textarea{min-height:120px;resize:vertical;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-submit{width:100%;padding:.85rem;background:var(--green);color:#fff;border:none;border-radius:100px;font-family:var(--sans);font-size:.95rem;font-weight:500;cursor:pointer;margin-top:.5rem;transition:all .2s;}
+.form-submit:hover{background:var(--green-mid);}
+@media(max-width:600px){.contact-grid{grid-template-columns:1fr;}.fg-row{grid-template-columns:1fr;}.team-card{flex-direction:column;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions" width="40" height="40"></div>
+      <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+    </a>
+    <a href="index.html" class="btn btn-outline">← Back to Home</a>
+  </div>
+</nav>
+<header class="page-hero">
+  <div class="page-hero-in">
+    <div class="eyebrow">Company</div>
+    <h1>Resources & Insights for North State Families</h1>
+    <p>Honest, practical guidance for families navigating the senior living search — written from the perspective of someone who talks to families and visits communities every day.</p>
+  </div>
+</header>
+<div class="page-body">
+
+<div class="highlight-box"><p>We're just getting started. New articles will be published regularly — focused on what actually helps families make better decisions. Check back soon, or <a href="contact.html">contact us</a> to suggest a topic.</p></div>
+
+<h2>Coming Soon</h2>
+
+<div class="blog-grid">
+  <div class="blog-card">
+    <span class="tag">Care Types</span>
+    <h4>Assisted Living vs. Memory Care: How to Know Which One Your Loved One Needs</h4>
+    <p>The line between assisted living and memory care isn't always obvious — and choosing the wrong level can mean an early and disruptive move. Here's how to read the signs and make the right call the first time.</p>
+    <p class="date">Coming soon</p>
+  </div>
+  <div class="blog-card">
+    <span class="tag">Costs</span>
+    <h4>The Real Cost of Keeping Mom at Home: A Comparison Families Need to See</h4>
+    <p>Most families assume home care is cheaper than senior living. When you add up the true costs — aides, meal delivery, medications, home modifications, and the hidden cost of caregiver burnout — the comparison is often much closer than expected.</p>
+    <p class="date">Coming soon</p>
+  </div>
+  <div class="blog-card">
+    <span class="tag">Local Guide</span>
+    <h4>Senior Living in Redding, CA: What Families Need to Know in 2026</h4>
+    <p>A local, honest overview of the Redding senior living market — what's available, what things cost, and how the major communities compare for different care needs and budgets.</p>
+    <p class="date">Coming soon</p>
+  </div>
+  <div class="blog-card">
+    <span class="tag">Local Guide</span>
+    <h4>Senior Living in Chico, CA: A Family's Guide to the Options</h4>
+    <p>Chico has more senior living options than many families realize — from large campuses to small residential homes. Here's how to navigate them.</p>
+    <p class="date">Coming soon</p>
+  </div>
+  <div class="blog-card">
+    <span class="tag">Veterans</span>
+    <h4>VA Aid &amp; Attendance: The Benefit That Pays for Senior Living (And Most Families Don't Know About It)</h4>
+    <p>Veterans and surviving spouses may qualify for up to $2,300/month to help cover assisted living costs. Here's what it is, who qualifies, and how to apply.</p>
+    <p class="date">Coming soon</p>
+  </div>
+  <div class="blog-card">
+    <span class="tag">Practical Guide</span>
+    <h4>How to Have the Conversation: Talking to a Parent About Assisted Living</h4>
+    <p>This is one of the most emotionally charged conversations a family can have. Here's how to approach it with honesty, respect, and the best chance of a good outcome.</p>
+    <p class="date">Coming soon</p>
+  </div>
+</div>
+
+<p style="margin-top:2rem;">Want to be notified when new articles are published? <a href="contact.html">Send us your email</a> and we'll add you to our occasional resource list. We don't send marketing emails — just genuinely useful content when we publish something new.</p>
+
+</div>
+<footer>
+  <div class="footer-in">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions" width="40" height="40"></div>
+        <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+      </a>
+      <p>Guidance. Support. Peace of Mind. — Honest, transparent placement guidance for families across Northern California.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="independent-living.html">Independent Living</a></li><li><a href="assisted-living.html">Assisted Living</a></li><li><a href="memory-care.html">Memory Care</a></li><li><a href="continuing-care.html">Continuing Care</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="care-type-guide.html">Care Type Guide</a></li><li><a href="tour-checklist.html">Tour Checklist</a></li><li><a href="cost-guide-2026.html">Cost Guide 2026</a></li><li><a href="financial-planning.html">Financial Planning</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="careers.html">Careers</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 North State Senior Solutions. All rights reserved.</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="fee-disclosure.html">Fee Disclosure</a></span>
+  </div>
+</footer>
+</body>
+</html>

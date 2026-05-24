@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Planning for Senior Living | North State Senior Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1E3D2F;--green-mid:#2D5443;--green-pale:#E4EDE7;--terra:#B8972A;--terra-light:#CDB054;--cream:#F8F5F0;--cream-dark:#EDE8DF;--charcoal:#1A1A1A;--gray:#6B6460;--gray-light:#A8A49E;--white:#FFFFFF;--border:rgba(26,26,26,0.10);--serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;--r:6px;--r-lg:14px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);background:var(--cream);color:var(--charcoal);line-height:1.6;-webkit-font-smoothing:antialiased;}
+nav{position:sticky;top:0;z-index:200;background:rgba(248,245,240,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding:0 2rem;}
+.nav-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+.logo-mark img{width:40px;height:40px;object-fit:contain;}
+.logo-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--green);letter-spacing:.04em;line-height:1.15;}
+.logo-sub{display:block;font-size:.6rem;font-weight:400;color:var(--terra);letter-spacing:.18em;text-transform:uppercase;}
+.btn{display:inline-flex;align-items:center;padding:.5rem 1.1rem;border-radius:100px;font-family:var(--sans);font-size:.8125rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all .2s;border:1.5px solid transparent;}
+.btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
+.btn-outline:hover{background:var(--green-pale);}
+.btn-terra{background:var(--terra);color:#fff;border-color:var(--terra);}
+.btn-terra:hover{background:var(--terra-light);}
+.page-hero{background:var(--green);padding:5rem 2rem 4rem;}
+.page-hero-in{max-width:820px;margin:0 auto;}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.3rem .875rem;background:rgba(255,255,255,.12);border-radius:100px;font-size:.75rem;font-weight:500;color:rgba(255,255,255,.8);margin-bottom:1.25rem;letter-spacing:.06em;}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2.4rem,5vw,3.6rem);font-weight:300;line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:1rem;}
+.page-hero p{font-size:1.05rem;color:rgba(255,255,255,.7);max-width:560px;line-height:1.7;font-weight:300;}
+.page-body{max-width:820px;margin:0 auto;padding:4rem 2rem 6rem;}
+h2{font-family:var(--serif);font-size:clamp(1.7rem,3vw,2.3rem);font-weight:300;line-height:1.15;letter-spacing:-.02em;margin:3rem 0 .875rem;}
+h3{font-family:var(--serif);font-size:1.25rem;font-weight:500;margin:1.5rem 0 .5rem;}
+p{color:var(--gray);line-height:1.8;font-weight:300;margin-bottom:1rem;font-size:.975rem;}
+ul,ol{color:var(--gray);line-height:1.8;font-weight:300;margin:0 0 1.25rem 1.5rem;font-size:.975rem;}
+li{margin-bottom:.4rem;}
+strong{color:var(--charcoal);font-weight:500;}
+a{color:var(--green);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.divider{height:1px;background:var(--border);margin:2.5rem 0;}
+.highlight-box{background:var(--green-pale);border-left:3px solid var(--green);border-radius:0 var(--r-lg) var(--r-lg) 0;padding:1.25rem 1.5rem;margin:1.75rem 0;}
+.highlight-box p{color:var(--charcoal);font-weight:400;margin:0;}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border-radius:var(--r-lg);overflow:hidden;margin:1.75rem 0;}
+.card{background:var(--white);padding:1.75rem;}
+.card h4{font-family:var(--serif);font-size:1.1rem;font-weight:500;color:var(--charcoal);margin-bottom:.5rem;}
+.card p{font-size:.875rem;color:var(--gray);line-height:1.65;font-weight:300;margin:0;}
+.checklist{list-style:none;margin-left:0;}
+.checklist li{padding:.6rem 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:.75rem;font-size:.95rem;}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{content:'☐';font-size:1.1rem;color:var(--green);flex-shrink:0;margin-top:1px;}
+.cta-band{background:var(--green);border-radius:var(--r-lg);padding:2.5rem;margin-top:3rem;text-align:center;}
+.cta-band h3{font-family:var(--serif);font-size:1.75rem;font-weight:300;color:#fff;margin-bottom:.5rem;}
+.cta-band p{color:rgba(255,255,255,.7);font-weight:300;margin-bottom:1.5rem;font-size:.95rem;}
+footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;background:var(--cream);}
+.footer-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:3rem;}
+.footer-brand p{font-size:.84rem;color:var(--gray);line-height:1.7;margin-top:.75rem;font-weight:300;max-width:270px;}
+.footer-col h4{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--charcoal);margin-bottom:.875rem;}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
+.footer-col a{text-decoration:none;font-size:.875rem;color:var(--gray);transition:color .2s;font-weight:300;}
+.footer-col a:hover{color:var(--charcoal);}
+.footer-bot{max-width:1120px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.78rem;color:var(--gray-light);}
+.footer-bot a{color:var(--gray-light);text-decoration:none;}
+@media(max-width:680px){.card-grid{grid-template-columns:1fr;}.footer-in{grid-template-columns:1fr 1fr;}}
+@media(max-width:480px){.footer-in{grid-template-columns:1fr;}}
+
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo">
+      <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions" width="40" height="40"></div>
+      <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+    </a>
+    <a href="index.html" class="btn btn-outline">← Back to Home</a>
+  </div>
+</nav>
+<header class="page-hero">
+  <div class="page-hero-in">
+    <div class="eyebrow">Resource</div>
+    <h1>Planning the Finances for Senior Living</h1>
+    <p>Paying for senior living is one of the most stressful parts of this process. This page walks through the options clearly — so your family can make a plan that actually works.</p>
+  </div>
+</header>
+<div class="page-body">
+
+<div class="highlight-box"><p>We are placement advisors, not financial advisors. The information on this page is educational. For decisions specific to your family's situation, we recommend working with a Certified Financial Planner (CFP) or Certified Senior Advisor (CSA).</p></div>
+
+<h2>Start With a Realistic Monthly Budget</h2>
+<p>Before touring any community, know your number. Add up all available monthly income and assets, then determine how many months of care they can realistically support. This is your baseline budget — and it determines which communities are genuinely sustainable, not just affordable today.</p>
+<p>A useful rule of thumb: plan for costs to increase 4–5% per year, and plan for care needs to increase over time. A budget that works at move-in may need to stretch within 12–24 months as care levels change.</p>
+
+<h2>Common Funding Sources</h2>
+<h3>Private Pay (Personal Savings and Income)</h3>
+<p>Most families begin with private pay — drawing from savings, retirement accounts, Social Security, pension income, and investment distributions. This is the most flexible option and accepted at every community in our network. The key question is how long private pay funds will last at the expected monthly rate.</p>
+
+<h3>Long-Term Care Insurance</h3>
+<p>If your loved one purchased a long-term care insurance (LTCI) policy, this is often the most valuable asset you have. Review the policy carefully for:</p>
+<ul>
+  <li><strong>Daily or monthly benefit amount</strong> — what the policy pays per day/month</li>
+  <li><strong>Benefit period</strong> — how many years the policy pays out</li>
+  <li><strong>Elimination period</strong> — how many days you pay before the policy kicks in (typically 30–90 days)</li>
+  <li><strong>Inflation protection</strong> — whether benefits have grown since the policy was purchased</li>
+  <li><strong>Qualifying events</strong> — most policies require inability to perform 2 of 6 ADLs, or a cognitive impairment diagnosis</li>
+</ul>
+<p>Contact the insurance company directly to file a claim. Some policies require a physician's certification before benefits begin.</p>
+
+<h3>Veterans Benefits (Aid &amp; Attendance)</h3>
+<p>The VA's Aid &amp; Attendance benefit provides monthly payments to help veterans and surviving spouses pay for assisted living, memory care, or in-home care. This benefit is significantly underutilized — many eligible families don't know it exists.</p>
+<p><strong>Who may qualify:</strong> Veterans who served at least 90 days of active duty (with at least one day during a wartime period), or their surviving spouses, who need help with daily activities and meet income/asset requirements.</p>
+<p><strong>Benefit amounts (2026):</strong> Up to approximately $2,300/month for a veteran, $1,478/month for a surviving spouse.</p>
+<p>The application process takes time — apply as early as possible. A VA-accredited claims agent can assist at no charge.</p>
+
+<h3>Home Sale Proceeds</h3>
+<p>For many families, selling the family home is the primary funding source for senior living. Coordinate the timeline carefully — the proceeds need to be available when the move happens, and the emotional weight of selling a family home is significant. Some families use a short-term bridge loan to cover senior living costs while the home sale is pending.</p>
+
+<h3>Life Insurance Policy Conversion</h3>
+<p>Existing life insurance policies may have options that fund senior living:</p>
+<ul>
+  <li><strong>Life settlements</strong> — selling the policy to a third party for a lump sum (more than surrender value, less than death benefit)</li>
+  <li><strong>Accelerated death benefits</strong> — some policies allow early access to a portion of the death benefit if the insured is chronically ill</li>
+  <li><strong>Policy loans</strong> — borrowing against the cash value of a whole life policy</li>
+</ul>
+
+<h3>Medi-Cal (Medicaid in California)</h3>
+<p>Medi-Cal covers long-term care in skilled nursing facilities and, in limited circumstances, in licensed assisted living homes (through specific waiver programs). Standard assisted living communities are generally not Medi-Cal covered — though a small number of communities in our network do accept Medi-Cal for residential care.</p>
+<p>Medi-Cal eligibility is income and asset-based. The rules are complex and change frequently. Consult an elder law attorney before making any asset transfers or spending decisions in anticipation of Medi-Cal.</p>
+
+<div class="divider"></div>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How long will our money last?</h3>
+<p>Divide total available assets by the expected monthly cost (including projected annual increases). A family with $400,000 in available assets paying $5,000/month has roughly 6–7 years of funding at that rate — less as costs increase over time. A financial planner can model this more precisely.</p>
+
+<h3>What happens when money runs out?</h3>
+<p>This is the most important question to ask a community before signing a residency agreement. Some communities allow residents to convert to Medi-Cal and remain in place. Others require discharge. Know the policy upfront — don't discover it mid-crisis.</p>
+
+<h3>Can siblings share the cost?</h3>
+<p>Yes, and many do. A simple cost-sharing agreement between siblings — ideally drafted with an attorney — prevents misunderstanding and resentment later. Document who contributes what and how decisions are made.</p>
+
+<h3>Should we consult an elder law attorney?</h3>
+<p>Yes, particularly if Medi-Cal planning is relevant, if there is a significant estate, or if power of attorney and healthcare directive documents are not current. Elder law attorneys specialize in this intersection of legal and care planning. The National Academy of Elder Law Attorneys (NAELA) maintains a directory at <a href="https://www.naela.org" target="_blank" rel="noopener">naela.org</a>.</p>
+
+<p>Have questions about costs for specific communities in the North State region? <a href="contact.html">Contact us</a> — we can give you honest, current pricing information from our facility network.</p>
+
+<div class="cta-band">
+  <h3>Ready to start your search?</h3>
+  <p>Our Community Finder matches your loved one to real communities in the North State region. Free, no pressure.</p>
+  <a href="index.html" class="btn btn-terra">Start the Community Finder →</a>
+</div>
+</div>
+<footer>
+  <div class="footer-in">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-mark"><img src="logo.png" alt="North State Senior Solutions" width="40" height="40"></div>
+        <span class="logo-name">NORTH STATE<span class="logo-sub">Senior Solutions</span></span>
+      </a>
+      <p>Guidance. Support. Peace of Mind. — Honest, transparent placement guidance for families across Northern California.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="independent-living.html">Independent Living</a></li><li><a href="assisted-living.html">Assisted Living</a></li><li><a href="memory-care.html">Memory Care</a></li><li><a href="continuing-care.html">Continuing Care</a></li></ul></div>
+    <div class="footer-col"><h4>Resources</h4><ul><li><a href="care-type-guide.html">Care Type Guide</a></li><li><a href="tour-checklist.html">Tour Checklist</a></li><li><a href="cost-guide-2026.html">Cost Guide 2026</a></li><li><a href="financial-planning.html">Financial Planning</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="careers.html">Careers</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+  </div>
+  <div class="footer-bot">
+    <span>© 2026 North State Senior Solutions. All rights reserved.</span>
+    <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="fee-disclosure.html">Fee Disclosure</a></span>
+  </div>
+</footer>
+</body>
+</html>
