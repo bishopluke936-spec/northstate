@@ -1,0 +1,119 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String
+  role      String   @default("ADVISOR")
+  leads     Lead[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Lead {
+  id                 String          @id @default(cuid())
+  firstName          String
+  lastName           String
+  age                Int?
+  phone              String?
+  email              String?
+  currentCity        String?
+  preferredLocation  String?
+  budgetMin          Float?
+  budgetMax          Float?
+  timeline           String?
+  status             String          @default("NEW_LEAD")
+  urgencyLevel       String          @default("MEDIUM")
+  notes              String?
+  careLevel          String?
+  mobility           String?
+  medicationSupport  Boolean         @default(false)
+  memoryDementia     Boolean         @default(false)
+  fallRisk           Boolean         @default(false)
+  behavioralConcerns Boolean         @default(false)
+  assignedToId       String?
+  assignedTo         User?           @relation(fields: [assignedToId], references: [id])
+  familyContacts     FamilyContact[]
+  referrals          Referral[]
+  communications     Communication[]
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+}
+
+model FamilyContact {
+  id               String   @id @default(cuid())
+  leadId           String
+  lead             Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  name             String
+  relationship     String
+  phone            String?
+  email            String?
+  preferredContact String?
+  isPrimary        Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model Community {
+  id                String     @id @default(cuid())
+  name              String
+  address           String?
+  city              String?
+  state             String?
+  zip               String?
+  contactPerson     String?
+  phone             String?
+  email             String?
+  website           String?
+  careLevels        String?
+  pricingMin        Float?
+  pricingMax        Float?
+  availability      String?
+  referralAgreement Boolean    @default(false)
+  referralFeeType   String?
+  referralFeeAmount Float?
+  notes             String?
+  referrals         Referral[]
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+}
+
+model Referral {
+  id                String    @id @default(cuid())
+  leadId            String
+  lead              Lead      @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  communityId       String
+  community         Community @relation(fields: [communityId], references: [id])
+  referralDate      DateTime  @default(now())
+  status            String    @default("SENT")
+  tourDate          DateTime?
+  followUpDate      DateTime?
+  moveInDate        DateTime?
+  referralFeeStatus String?
+  referralFeeAmount Float?
+  notes             String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+}
+
+model Communication {
+  id               String   @id @default(cuid())
+  leadId           String
+  lead             Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  type             String
+  date             DateTime @default(now())
+  summary          String
+  nextStep         String?
+  followUpDate     DateTime?
+  followUpReminder Boolean  @default(false)
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
