@@ -1,0 +1,22 @@
+# Environment files — never commit secrets
+.env
+.env.local
+.env.production
+
+# Next.js
+alder/.next/
+alder/out/
+
+# Database files
+*.db
+*.db-journal
+
+# Dependencies
+alder/node_modules/
+
+# Build output
+alder/dist/
+
+# OS
+.DS_Store
+Thumbs.db
