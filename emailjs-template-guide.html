@@ -1,0 +1,286 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  NORTH STATE SENIOR SOLUTIONS — EMAILJS SETUP GUIDE             ║
+  ╠══════════════════════════════════════════════════════════════════╣
+  ║                                                                  ║
+  ║  HOW TO USE THIS FILE                                            ║
+  ║  ─────────────────────                                           ║
+  ║  This file contains two email templates. Follow the steps below  ║
+  ║  to configure EmailJS so that every form submission arrives in   ║
+  ║  your inbox formatted as a referral intake sheet.                ║
+  ║                                                                  ║
+  ║  STEP 1 — Sign up / log in at emailjs.com (free tier is fine)   ║
+  ║                                                                  ║
+  ║  STEP 2 — Connect your Outlook account                           ║
+  ║    Email Services → Add New Service → Outlook 365               ║
+  ║    Copy the Service ID (looks like "service_xxxxxxx")            ║
+  ║                                                                  ║
+  ║  STEP 3 — Create TWO Email Templates                             ║
+  ║                                                                  ║
+  ║    Template A: "Community Finder Intake"                         ║
+  ║      To email    : northstateseniorsolutions@outlook.com         ║
+  ║      Subject     : 🌿 New Intake — {{family_contact_name}}       ║
+  ║                    ({{care_level}} · {{timeline}})               ║
+  ║      Content     : Copy the HTML below (TEMPLATE A)             ║
+  ║      Copy Template ID (looks like "template_xxxxxxx")            ║
+  ║                                                                  ║
+  ║    Template B: "Contact Form Message"                            ║
+  ║      To email    : northstateseniorsolutions@outlook.com         ║
+  ║      Subject     : 📬 New Message — {{family_contact_name}}      ║
+  ║                    re: {{inquiry_subject}}                        ║
+  ║      Content     : Copy the HTML below (TEMPLATE B)             ║
+  ║      Copy Template ID                                            ║
+  ║                                                                  ║
+  ║  STEP 4 — Get your Public API Key                                ║
+  ║    Account → API Keys → Public Key                               ║
+  ║                                                                  ║
+  ║  STEP 5 — Paste your keys into the two website files             ║
+  ║                                                                  ║
+  ║    In index.html   (around line 1227):                           ║
+  ║      const EMAILJS_PUBLIC_KEY  = 'paste_public_key_here';        ║
+  ║      const EMAILJS_SERVICE_ID  = 'paste_service_id_here';        ║
+  ║      const EMAILJS_TEMPLATE_ID = 'paste_template_A_id_here';     ║
+  ║                                                                  ║
+  ║    In contact.html (near bottom of file):                        ║
+  ║      const EMAILJS_PUBLIC_KEY        = 'paste_public_key_here';  ║
+  ║      const EMAILJS_SERVICE_ID        = 'paste_service_id_here';  ║
+  ║      const EMAILJS_CONTACT_TEMPLATE  = 'paste_template_B_id';    ║
+  ║                                                                  ║
+  ║  STEP 6 — Deploy the updated files to Netlify                    ║
+  ║                                                                  ║
+  ║  STEP 7 — Test by submitting each form yourself                  ║
+  ║                                                                  ║
+  ╚══════════════════════════════════════════════════════════════════╝
+-->
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TEMPLATE A — Community Finder / Care Assessment Intake
+     Paste this into EmailJS → Template A → Content (HTML mode)
+     ═══════════════════════════════════════════════════════════════ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Client Intake</title>
+</head>
+<body style="margin:0;padding:0;background:#EDE8DF;font-family:'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<div style="max-width:620px;margin:28px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.09);">
+
+  <!-- ── HEADER ───────────────────────────────────────── -->
+  <div style="background:#1E3D2F;padding:28px 32px 24px;">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;">North State Senior Solutions</div>
+    <div style="font-size:26px;font-weight:300;color:#fff;letter-spacing:-0.02em;margin-bottom:4px;">New Client Intake</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.4);">{{received_date}} &nbsp;·&nbsp; {{referral_type}}</div>
+  </div>
+
+  <!-- ── FAMILY CONTACT ────────────────────────────────── -->
+  <div style="padding:22px 32px 18px;border-bottom:1px solid #EDE8DF;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:14px;">Family Contact</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6;">
+      <tr>
+        <td style="width:36%;padding:4px 0;color:#6B6460;font-size:12px;">Name</td>
+        <td style="padding:4px 0;font-weight:600;color:#1A1A1A;">{{family_contact_name}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Relationship to Senior</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{who}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Phone</td>
+        <td style="padding:4px 0;color:#1A1A1A;"><strong>{{phone}}</strong></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Email</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{email}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Preferred Contact</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{contact_method}} &nbsp;·&nbsp; {{contact_time}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── SENIOR PROFILE ───────────────────────────────── -->
+  <div style="padding:22px 32px 18px;border-bottom:1px solid #EDE8DF;background:#FAFAF8;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:14px;">Senior Profile</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6;">
+      <tr>
+        <td style="width:36%;padding:4px 0;color:#6B6460;font-size:12px;">Name</td>
+        <td style="padding:4px 0;font-weight:600;color:#1A1A1A;">{{senior_name}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Age Range</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{senior_age}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Current Living Situation</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{living_situation}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Current Location</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{senior_location}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── CARE NEEDS ────────────────────────────────────── -->
+  <div style="padding:22px 32px 18px;border-bottom:1px solid #EDE8DF;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:14px;">Care Needs Assessment</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6;">
+      <tr>
+        <td style="width:36%;padding:4px 0;color:#6B6460;font-size:12px;">Care Level</td>
+        <td style="padding:4px 0;color:#1E3D2F;font-weight:600;">{{care_level}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Mobility</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{mobility}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Memory / Dementia</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{dementia}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">ADL Assistance Needed</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{adl_needs}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── FINANCIAL & LOGISTICS ─────────────────────────── -->
+  <div style="padding:22px 32px 18px;border-bottom:1px solid #EDE8DF;background:#FAFAF8;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:14px;">Financial &amp; Logistics</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6;">
+      <tr>
+        <td style="width:36%;padding:4px 0;color:#6B6460;font-size:12px;">Monthly Budget</td>
+        <td style="padding:4px 0;font-weight:600;color:#1A1A1A;">{{budget}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Funding Sources</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{funding}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Timeline</td>
+        <td style="padding:4px 0;font-weight:600;color:#1A1A1A;">{{timeline}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Preferred Location</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{preferred_location}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── COMMUNITY MATCHES ─────────────────────────────── -->
+  <div style="padding:22px 32px 18px;border-bottom:1px solid #EDE8DF;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:14px;">Community Matches</div>
+    <pre style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;color:#333;line-height:1.75;white-space:pre-wrap;margin:0;">{{match_results}}</pre>
+  </div>
+
+  <!-- ── NOTES FROM CLIENT ─────────────────────────────── -->
+  <div style="padding:22px 32px 18px;border-bottom:1px solid #EDE8DF;background:#FAFAF8;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:14px;">Notes from Client</div>
+    <div style="margin-bottom:14px;">
+      <div style="font-size:11px;color:#6B6460;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Lifestyle &amp; Preferences</div>
+      <div style="font-size:13px;color:#333;line-height:1.7;">{{lifestyle}}</div>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div style="font-size:11px;color:#6B6460;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Concerns</div>
+      <div style="font-size:13px;color:#333;line-height:1.7;">{{concerns}}</div>
+    </div>
+    <div>
+      <div style="font-size:11px;color:#6B6460;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">What Would Make This the Right Fit</div>
+      <div style="font-size:13px;color:#333;line-height:1.7;">{{right_fit}}</div>
+    </div>
+  </div>
+
+  <!-- ── NEXT STEPS CHECKLIST ──────────────────────────── -->
+  <div style="padding:22px 32px 24px;background:#1E3D2F;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;">Suggested Next Steps</div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.82);line-height:2;">
+      ☐ &nbsp;Contact {{family_contact_name}} via {{contact_method}} (best time: {{contact_time}})<br>
+      ☐ &nbsp;Confirm care needs and schedule assessment call<br>
+      ☐ &nbsp;Check availability at matched communities<br>
+      ☐ &nbsp;Add lead to ALDER CRM
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <div style="padding:14px 32px;background:#EDE8DF;text-align:center;">
+    <div style="font-size:11px;color:#A8A49E;">North State Senior Solutions &nbsp;·&nbsp; northstateseniorsolutions@outlook.com</div>
+  </div>
+
+</div>
+</body>
+</html>
+<!-- END TEMPLATE A -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TEMPLATE B — Contact Form Message
+     Paste this into EmailJS → Template B → Content (HTML mode)
+     ═══════════════════════════════════════════════════════════════ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Contact Form Message</title>
+</head>
+<body style="margin:0;padding:0;background:#EDE8DF;font-family:'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;">
+<div style="max-width:580px;margin:28px auto;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.09);">
+
+  <!-- ── HEADER ───────────────────────────────────────── -->
+  <div style="background:#1E3D2F;padding:24px 28px 20px;">
+    <div style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:6px;">North State Senior Solutions</div>
+    <div style="font-size:22px;font-weight:300;color:#fff;letter-spacing:-0.02em;margin-bottom:4px;">New Message</div>
+    <div style="font-size:12px;color:rgba(255,255,255,0.4);">{{received_date}} &nbsp;·&nbsp; {{referral_type}}</div>
+  </div>
+
+  <!-- ── SENDER DETAILS ────────────────────────────────── -->
+  <div style="padding:20px 28px 16px;border-bottom:1px solid #EDE8DF;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:12px;">From</div>
+    <table style="width:100%;border-collapse:collapse;font-size:13.5px;line-height:1.6;">
+      <tr>
+        <td style="width:30%;padding:4px 0;color:#6B6460;font-size:12px;">Name</td>
+        <td style="padding:4px 0;font-weight:600;color:#1A1A1A;">{{family_contact_name}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Phone</td>
+        <td style="padding:4px 0;color:#1A1A1A;"><strong>{{phone}}</strong></td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Email</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{email}}</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 0;color:#6B6460;font-size:12px;">Subject</td>
+        <td style="padding:4px 0;color:#1A1A1A;">{{inquiry_subject}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ── MESSAGE ───────────────────────────────────────── -->
+  <div style="padding:20px 28px 20px;border-bottom:1px solid #EDE8DF;background:#FAFAF8;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:#B8972A;margin-bottom:12px;">Message</div>
+    <div style="font-size:14px;color:#333;line-height:1.75;">{{message}}</div>
+  </div>
+
+  <!-- ── NEXT STEPS ─────────────────────────────────────── -->
+  <div style="padding:18px 28px 20px;background:#1E3D2F;">
+    <div style="font-size:10px;font-weight:600;letter-spacing:0.13em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:12px;">Suggested Next Steps</div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.82);line-height:2;">
+      ☐ &nbsp;Reply to {{family_contact_name}} at {{email}} or {{phone}}<br>
+      ☐ &nbsp;If placement inquiry: direct to Community Finder or schedule a call<br>
+      ☐ &nbsp;If partnership inquiry: forward to your outreach process
+    </div>
+  </div>
+
+  <!-- ── FOOTER ────────────────────────────────────────── -->
+  <div style="padding:12px 28px;background:#EDE8DF;text-align:center;">
+    <div style="font-size:11px;color:#A8A49E;">North State Senior Solutions &nbsp;·&nbsp; northstateseniorsolutions@outlook.com</div>
+  </div>
+
+</div>
+</body>
+</html>
+<!-- END TEMPLATE B -->

@@ -1567,8 +1567,12 @@ async function aSendEmail(data,matches){
       return `${i+1}. ${c.name} — ${m.score}% Match\n   📍 ${c.city}, CA\n   Care: ${c.careTypes.map(t=>t.replace(/-/g,' ')).join(', ')}\n   Rate: $${c.monthlyRateMin?c.monthlyRateMin.toLocaleString():'TBD'} – $${c.monthlyRateMax?c.monthlyRateMax.toLocaleString():'TBD'}/mo\n   📞 ${c.phone||'—'} | License: ${c.licenseNumber||'—'}\n   ${c.description}`;
     }).join('\n\n');
     await emailjs.send(EMAILJS_SERVICE_ID,EMAILJS_TEMPLATE_ID,{
+      // Meta
+      referral_type: 'Community Finder',
+      received_date: new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}),
       // Contact
       family_contact_name: data.name||'—',
+      who: data.who||'—',
       email: data.email||'—',
       phone: data.phone||'—',
       contact_method: data.contact_method||'No preference',

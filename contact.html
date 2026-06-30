@@ -128,7 +128,7 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;background:var(
 <p>Fill out the form below and we'll respond within one business day. For urgent situations — hospital discharge, imminent need — please email us directly and note the urgency in the subject line.</p>
 
 <div class="form-wrap">
-  <form name="contact-form" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <form name="contact-form" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleContactSubmit(event)">
     <input type="hidden" name="form-name" value="contact-form">
     <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
     <div class="fg-row">
@@ -188,5 +188,57 @@ footer{border-top:1px solid var(--border);padding:3rem 2rem 2rem;background:var(
     <span><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="fee-disclosure.html">Fee Disclosure</a></span>
   </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+/* ── CONTACT FORM → EMAIL NOTIFICATION ───────────────────────────────────────
+   1. Go to emailjs.com and sign in (same account used for the Community Finder)
+   2. Create a second Email Template for the contact form (use the referral sheet
+      template in emailjs-template-guide.html — choose "Contact Form" variant)
+   3. Paste your keys below.
+   ─────────────────────────────────────────────────────────────────────────── */
+const EMAILJS_PUBLIC_KEY         = 'YOUR_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID         = 'YOUR_SERVICE_ID';
+const EMAILJS_CONTACT_TEMPLATE   = 'YOUR_CONTACT_TEMPLATE_ID';
+
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn  = form.querySelector('button[type=submit]');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const payload = {
+    referral_type        : 'Contact Form',
+    received_date        : new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}),
+    family_contact_name  : form.querySelector('#c-name').value  || '—',
+    phone                : form.querySelector('#c-phone').value || '—',
+    email                : form.querySelector('#c-email').value || '—',
+    inquiry_subject      : form.querySelector('#c-subject').value,
+    message              : form.querySelector('#c-message').value || '—',
+  };
+
+  // Send email notification (only if configured)
+  const emailPromise = (EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY')
+    ? (emailjs.init(EMAILJS_PUBLIC_KEY), emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CONTACT_TEMPLATE, payload).catch(console.warn))
+    : Promise.resolve();
+
+  // Also save to Netlify Forms (backup log)
+  const netlifyPayload = new URLSearchParams({'form-name':'contact-form', ...payload});
+  const netlifyPromise = fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: netlifyPayload.toString()}).catch(console.warn);
+
+  Promise.all([emailPromise, netlifyPromise]).then(() => {
+    form.innerHTML = `
+      <div style="text-align:center;padding:2.5rem 0;">
+        <div style="font-size:2rem;margin-bottom:.75rem;">✓</div>
+        <p style="font-family:var(--serif);font-size:1.25rem;color:var(--green);margin-bottom:.5rem;">Message received.</p>
+        <p style="color:var(--gray);font-size:.9rem;font-weight:300;line-height:1.7;">We'll follow up within one business day.<br>For urgent needs, email us directly.</p>
+      </div>`;
+  }).catch(() => {
+    btn.disabled = false;
+    btn.textContent = 'Send Message →';
+    alert('Something went wrong. Please email us directly at northstateseniorsolutions@outlook.com');
+  });
+}
+</script>
 </body>
 </html>
