@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ── SEO ─────────────────────────────────────────── -->
-<title>Senior Living Placement in Northern California | North State Senior Solutions</title>
+<title>Finding The Right Community Starts Here. | North State Senior Solutions</title>
 <meta name="description" content="North State Senior Solutions helps families in Redding, Chico, and Northern California find assisted living, memory care, and independent living communities. Free guidance, honest advice, local expertise. Call today.">
 <meta name="keywords" content="senior living Redding CA, assisted living Redding, memory care Chico, senior living placement Northern California, senior living advisor Redding, assisted living Chico CA">
 <meta name="author" content="Luke Bishop, North State Senior Solutions">
@@ -367,7 +367,13 @@ footer{border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;background:va
       <li><a href="#resources">Resources</a></li>
     </ul>
     <a id="btn-nav-search" href="#" class="btn btn-primary btn-sm">Start Your Search</a>
-    <a href="tel:5305550100" class="btn btn-outline btn-sm" style="margin-left:.5rem;">📞 (530) 555-0100</a>
+    <div class="phone-btn-wrap" style="position:relative;display:inline-block;margin-left:.5rem;">
+      <button onclick="togglePhoneMenu()" class="btn btn-outline btn-sm" id="phone-toggle" style="gap:.3rem;">📞 (530) 276-8849 ▾</button>
+      <div id="phone-menu" style="display:none;position:absolute;top:110%;right:0;background:#fff;border:1.5px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);overflow:hidden;min-width:160px;z-index:300;">
+        <a href="tel:5302768849" style="display:flex;align-items:center;gap:.6rem;padding:.75rem 1rem;font-family:var(--sans);font-size:.875rem;color:var(--charcoal);text-decoration:none;border-bottom:1px solid var(--border);" onmouseover="this.style.background='var(--green-pale)'" onmouseout="this.style.background='#fff'">📞 Call us</a>
+        <a href="sms:5302768849" style="display:flex;align-items:center;gap:.6rem;padding:.75rem 1rem;font-family:var(--sans);font-size:.875rem;color:var(--charcoal);text-decoration:none;" onmouseover="this.style.background='var(--green-pale)'" onmouseout="this.style.background='#fff'">💬 Text us</a>
+      </div>
+    </div>
   </div>
 </nav>
 
@@ -413,9 +419,8 @@ footer{border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;background:va
       </div>
       <div class="fade d2">
         <div class="quote-card">
-          <p>"I started this because I watched families in our community get handed a generic list of facilities by services that had never set foot inside them — and then get bombarded with calls from places they'd never heard of. That's not guidance. That's lead generation.</p>
-          <p style="margin-top:.875rem;">The North State is my home. These are my neighbors. They deserve someone who actually knows the communities, tells the truth, and picks up the phone."</p>
-          <p class="quote-attr">— Luke Bishop, Founder, North State Senior Solutions</p>
+          <p>"I started North State Senior Solutions to be a trusted guide for families navigating senior living options for their loved ones. These decisions can feel overwhelming, especially when families are unsure where to begin. My goal is to bring clarity, compassion, and local knowledge to the search — helping every family find a community where their loved one can feel safe, supported, and connected."</p>
+          <p class="quote-attr">— Luke, Founder of North State Senior Solutions</p>
         </div>
         <div class="trust-badge">
           <div class="badge-ico">
@@ -621,7 +626,7 @@ footer{border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;background:va
           </div>
           <div class="fg">
             <label for="f-phone">Phone number *</label>
-            <input id="f-phone" type="tel" name="phone" placeholder="(530) 555-0100" autocomplete="tel" required>
+            <input id="f-phone" type="tel" name="phone" placeholder="(530) 276-8849" autocomplete="tel" required>
           </div>
         </div>
         <div class="fg">
@@ -739,7 +744,7 @@ footer{border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;background:va
         </div>
         <div class="afield" id="a-f-phone-wrap">
           <label class="afield-label" for="a-phone">Best phone number <span class="req">*</span></label>
-          <input type="tel" id="a-phone" name="phone" placeholder="(530) 555-0100" autocomplete="tel">
+          <input type="tel" id="a-phone" name="phone" placeholder="(530) 276-8849" autocomplete="tel">
           <p class="aerr">Please enter your phone number.</p>
         </div>
       </div>
@@ -1243,7 +1248,18 @@ async function handleSubmit(e){
 
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeAssessment();}});
 
-// ── SCROLL ANIMATION ──────────────────────────────
+// ── PHONE MENU TOGGLE ────────────────────────────
+function togglePhoneMenu(){
+  const menu=document.getElementById('phone-menu');
+  menu.style.display=menu.style.display==='none'?'block':'none';
+}
+document.addEventListener('click',function(e){
+  const wrap=document.querySelector('.phone-btn-wrap');
+  if(wrap&&!wrap.contains(e.target)){
+    document.getElementById('phone-menu').style.display='none';
+  }
+});
+
 const io=new IntersectionObserver(entries=>{
   entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
 },{threshold:.1,rootMargin:'0px 0px -30px 0px'});
