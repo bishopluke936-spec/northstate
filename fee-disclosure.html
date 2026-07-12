@@ -8,10 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --green:      #2C4A3E;
-  --green-mid:  #3D6B5C;
-  --green-pale: #E8F0EC;
-  --terra:      #C17A45;
+  --green:      #1E3D2F;
+  --green-mid:  #2D5443;
+  --green-pale: #E4EDE7;
+  --terra:      #B8972A;
   --cream:      #F8F5F0;
   --cream-dark: #EDE8DF;
   --charcoal:   #1A1A1A;
@@ -34,9 +34,12 @@ nav{
 }
 .nav-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.logo-mark{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;}
-.logo-mark svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-.logo-name{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--green);letter-spacing:-0.01em;}
+.logo-mark{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
+.logo-mark img{width:44px;height:44px;object-fit:contain;border-radius:50%;}
+.logo-name{font-family:var(--serif);font-size:1rem;font-weight:600;color:var(--green);letter-spacing:.04em;line-height:1.15;}
+.logo-sub{display:block;font-size:.6rem;font-weight:400;color:var(--terra);letter-spacing:.18em;text-transform:uppercase;}
+.btn-outline{background:transparent;color:var(--green);border-color:var(--green);}
+.btn-outline:hover{background:var(--green-pale);}
 .btn{display:inline-flex;align-items:center;padding:.6rem 1.35rem;border-radius:100px;font-family:var(--sans);font-size:.875rem;font-weight:500;text-decoration:none;cursor:pointer;transition:all .2s;border:1.5px solid transparent;}
 .btn-primary{background:var(--green);color:#fff;border-color:var(--green);}
 .btn-primary:hover{background:var(--green-mid);}
@@ -147,13 +150,13 @@ footer a:hover{color:var(--gray);}
   <div class="contact-card">
     <h3>We welcome the question.</h3>
     <p>If anything on this page is unclear, or if you'd like to know specifically whether we have a referral agreement with a community you're considering, please reach out. Transparency isn't a policy for us — it's the whole point.</p>
-    <a href="mailto:northstateseniorsolutions@outlook.com">Email Us Directly →</a>
+    <a href="mailto:info@northstateseniorsolutions.com">Email Us Directly →</a>
   </div>
 
 </div>
 
 <footer>
-  <p>© 2026 North State Senior Solutions &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="mailto:northstateseniorsolutions@outlook.com">Contact</a></p>
+  <p>© 2026 North State Senior Solutions, LLC &nbsp;·&nbsp; <a href="index.html">Home</a> &nbsp;·&nbsp; <a href="mailto:info@northstateseniorsolutions.com">Contact</a></p>
 </footer>
 
 </body>
